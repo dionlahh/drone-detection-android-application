@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".trial.ImageDetectionActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/phantom_top_down_10m" />
+
+    <org.tensorflow.lite.examples.detection.customview.OverlayView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tracking_overlay"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/run_button"
+        android:text = "Run Model"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/upload_button"
+        android:text="Upload Image"
+        android:layout_toLeftOf="@id/run_button"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+include ':app', ':tensorflow-lite'
+
+setBinding(new Binding([gradle:this]))
+
+evaluate(new File(
+        settingsDir.parentFile,
+        'pointdefence/map/.android/include_flutter.groovy'
+))
+
+include ':map'
+project(':map').projectDir = new File('../pointdefence/map')
+
+include ':map'
+project(':map').projectDir = new File('../pointdefence/map')

@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme.ObjectDetection" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/tfe_color_primary</item>
+        <item name="colorPrimaryDark">@color/tfe_color_primary_dark</item>
+        <item name="colorAccent">@color/tfe_color_accent</item>
+
+    </style>
+
+    <style name="FlutterTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/flutter_color</item>
+        <item name="colorPrimaryDark">@color/control_background</item>
+        <item name="colorAccent">@color/tfe_color_accent</item>
+        <item name="android:colorForeground">@android:color/white</item>
+    </style>
+
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">@drawable/ic_drone_icon</item>
+    </style>
+
+</resources>

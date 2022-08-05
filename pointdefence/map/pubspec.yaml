@@ -1,0 +1,49 @@
+name: map
+description: A new Flutter project.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_map: any
+  geolocator: any
+  flutter_bloc: ^8.0.1
+  equatable: ^2.0.3
+  cupertino_icons: ^1.0.2
+  flutter_compass:
+    git:
+      url: https://github.com/hemanthrajv/flutter_compass.git
+      ref: master
+  permission_handler: ^9.2.0
+  location: ^4.4.0
+  flutter_map_marker_popup: 2.1.2
+  flutter_map_dragmarker: ^1.1.0
+  flutter_map_line_editor: ^1.0.0+1
+  geodesy: ^0.4.0-nullsafety.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/compass.png
+    - fonts/DroneIcon.ttf
+
+  fonts:
+    - family: DroneIcon
+      fonts:
+        - asset: fonts/DroneIcon.ttf
+
+  module:
+    androidX: true
+    androidPackage: com.example.flutter_module
+    iosBundleIdentifier: com.example.flutterModule

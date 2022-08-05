@@ -1,0 +1,46 @@
+<resources>
+    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">TFL Detect</string>
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
+    <string name="client_app_name">RTSP Streamer</string>
+    <string name="start_stream">Start Stream</string>
+    <string name="stop_stream">Stop Stream</string>
+
+    <!--drawer-->
+    <string name="drawer_title">Options</string>
+    <string name="protocols">Protocol</string>
+    <string name="tcp">TCP</string>
+    <string name="udp">UDP</string>
+    <string name="video">Video</string>
+    <string name="audio">Audio</string>
+    <string name="resolution">Resolution</string>
+    <string name="video_bitrate">Bitrate (on fly)</string>
+    <string name="audio_bitrate">Bitrate</string>
+    <string name="fps">FPS</string>
+    <string name="orientation">Orientation</string>
+    <string name="hardware_rotation">Hardware rotation</string>
+    <string name="samplerate">SampleRate</string>
+    <string name="channel">Channel</string>
+    <string name="stereo">Stereo</string>
+    <string name="mono">Mono</string>
+    <string name="echo_canceler">Echo canceler</string>
+    <string name="camera">Camera</string>
+    <string name="auth">Auth</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="noise_suppressor">Noise suppressor</string>
+    <string name="video_source">Video source</string>
+    <string name="audio_source">Audio source</string>
+    <string name="camera1">Camera1</string>
+    <string name="camera2">Camera2</string>
+    <string name="screen">Screen</string>
+    <string name="internal">Internal</string>
+
+    <string name="sotw_north">N</string>
+    <string name="sotw_east">E</string>
+    <string name="sotw_south">S</string>
+    <string name="sotw_west">W</string>
+    <string name="sotw_northeast">NE</string>
+    <string name="sotw_northwest">NW</string>
+    <string name="sotw_southeast">SE</string>
+    <string name="sotw_southwest">SW</string>
+</resources>

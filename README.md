@@ -34,7 +34,10 @@ Features that **Drone Detection Map** offers:
    e. [Object Detection Setup](#object-detector-setup)<br>
    f. [Red Line](#red-line)<br>
    g. [Range & Geopositioning](#range--geopositioning)<br>
-3. [Libraries](#libraries)
+3. [Design & Architecture](#design--architecture)<br>
+   a. [BLoC](#bloc)<br>
+   b. [MVVM](#mvvm)<br>
+5. [Libraries](#libraries)
 
 # Integration
 

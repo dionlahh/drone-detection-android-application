@@ -22,6 +22,7 @@ dependencies:
   permission_handler: ^11.3.0
   location: ^6.0.2
   geodesy: ^0.10.2
+  image_picker: ^1.0.7
 
 dependency_overrides:
   permission_handler: ^11.3.0

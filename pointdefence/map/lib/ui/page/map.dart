@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
+import 'package:permission_handler/permission_handler.dart' as ph;
 import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:map/blocs/menu_bloc/menu_bloc.dart';
 import 'package:map/blocs/object_bloc/draw_objects_bloc.dart';
 import 'package:map/circles_mgr.dart';
@@ -25,6 +27,8 @@ import '../../network/model/arc.dart';
 import '../common/droneCalc.dart';
 import '../common/native_android_method_channel.dart';
 import '../common/drone_icon_icons.dart';
+import '../widget/grid_overlay.dart';
+import '../widget/scale_overlay.dart';
 // import '../common/objectCreator.dart';
 
 class MapPage extends StatefulWidget {
@@ -49,18 +53,14 @@ class MapPageState extends State<MapPage> {
   bool grid = false;
   int layerSelection = 2;
   List<String> tileLayers = [
-    // Default
-    'https://maps-{s}.onemap.sg/v3/Default/{z}/{x}/{y}.png',
-    'https://maps-{s}.onemap.sg/v3/Night/{z}/{x}/{y}.png',
-    'https://maps-{s}.onemap.sg/v3/Grey/{z}/{x}/{y}.png',
-    'https://maps-{s}.onemap.sg/v3/Original/{z}/{x}/{y}.png',
-    // TileLayerOptions(
-    //   // Offline
-    //   tileProvider: const AssetTileProvider(),
-    //   tileBuilder: tileBuilder,
-    //   maxZoom: 14.0,
-    //   urlTemplate: 'assets/map/anholt_osmbright/{z}/{x}/{y}.png',
-    // ),
+    // OpenStreetMap - public and reliable
+    'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    // CartoDB Dark Matter
+    'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    // CartoDB Voyager
+    'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+    // Stamen Terrain
+    'https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png',
   ];
   double directionRad = 0;
   int droneViewSelection = 0;
@@ -69,20 +69,25 @@ class MapPageState extends State<MapPage> {
 // Handles grids
   // tileBuilder removed for flutter_map 8 migration
 
-// Live Location
+  // Live Location
   LocationData? _currentLocation;
   late final MapController _mapController;
+  double _currentZoom = 18.0;
   bool _liveUpdate = true;
   bool _permission = false;
   String? _serviceError = '';
   var interActiveFlags = InteractiveFlag.all;
   final Location _locationService = Location();
+  final ImagePicker _imagePicker = ImagePicker();
   // Poly editor removed during flutter_map 8 migration
 
   @override
   void initState() {
     super.initState();
-    NativeAndroidMethodChannel().getCameraFOV();
+    // Safely fire-and-forget native call; ignore if plugin not registered
+    // (e.g., when running as a module without host implementation)
+    // ignore: unawaited_futures
+    NativeAndroidMethodChannel().getCameraFOV().catchError((_) {});
     _mapController = MapController();
     initLocationService();
     Timer.periodic(const Duration(seconds: 1), (_) {
@@ -95,6 +100,13 @@ class MapPageState extends State<MapPage> {
   }
 
   void initLocationService() async {
+    // Ensure runtime location permission is granted before starting updates
+    final phStatus = await ph.Permission.location.request();
+    if (!phStatus.isGranted) {
+      _permission = false;
+      return;
+    }
+
     await _locationService.changeSettings(
       accuracy: LocationAccuracy.high,
       interval: 10,
@@ -123,7 +135,13 @@ class MapPageState extends State<MapPage> {
                     currentPos: LatLng(_currentLocation!.latitude!,
                         _currentLocation!.longitude!));
                 droneFunctions.getDroneData();
-                // If Live Update is enabled, move map center (disabled for migration)
+                // If Live Update is enabled, move map center
+                if (_liveUpdate && _currentLocation != null) {
+                  _mapController.move(
+                    LatLng(_currentLocation!.latitude!, _currentLocation!.longitude!),
+                    _currentZoom,
+                  );
+                }
               });
             }
           });
@@ -174,30 +192,96 @@ class MapPageState extends State<MapPage> {
               appBar: AppBar(
                 actions: [
                   IconButton(
-                      onPressed: () => _liveUpdate = !_liveUpdate,
+                      tooltip: _liveUpdate ? 'Désactiver suivi' : 'Activer suivi',
+                      onPressed: () {
+                        debugPrint('Live update button pressed: $_liveUpdate -> ${!_liveUpdate}');
+                        setState(() {
+                          _liveUpdate = !_liveUpdate;
+                        });
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(_liveUpdate 
+                                ? 'Suivi localisation activé' 
+                                : 'Suivi localisation désactivé'),
+                            duration: const Duration(seconds: 1),
+                          ),
+                        );
+                      },
                       icon: Icon(_liveUpdate
                           ? Icons.location_disabled
                           : Icons.location_searching)),
                   IconButton(
-                      onPressed: () => setState(() =>
-                          droneViewSelection = (droneViewSelection + 1) % 3),
-                      icon: const Icon(DroneIcon.kindpng_536873)),
+                      tooltip: 'Vue drone (${droneViewSelection + 1}/3)',
+                      onPressed: () {
+                        final newSelection = (droneViewSelection + 1) % 3;
+                        debugPrint('Drone view button pressed: $droneViewSelection -> $newSelection');
+                        setState(() {
+                          droneViewSelection = newSelection;
+                        });
+                        final modeNames = ['Dernière détection', 'Trajectoire', 'Animation'];
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Vue drone: ${modeNames[newSelection]}'),
+                            duration: const Duration(seconds: 1),
+                          ),
+                        );
+                      },
+                      icon: Icon(DroneIcon.kindpng_536873)),
                   IconButton(
-                    onPressed: () => setState(() => grid = !grid),
+                    tooltip: grid ? 'Masquer grille' : 'Afficher grille',
+                    onPressed: () {
+                      debugPrint('Grid button pressed: $grid -> ${!grid}');
+                      setState(() {
+                        grid = !grid;
+                      });
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(grid ? 'Grille affichée' : 'Grille masquée'),
+                          duration: const Duration(seconds: 1),
+                        ),
+                      );
+                    },
                     icon: Icon(grid ? Icons.grid_off : Icons.grid_on),
                   ),
                   IconButton(
-                      onPressed: () => setState(() => layerSelection =
-                          (layerSelection + 1) % tileLayers.length),
+                      tooltip: 'Changer carte (${layerSelection + 1}/${tileLayers.length})',
+                      onPressed: () {
+                        final newSelection = (layerSelection + 1) % tileLayers.length;
+                        debugPrint('Layer button pressed: $layerSelection -> $newSelection');
+                        setState(() {
+                          layerSelection = newSelection;
+                        });
+                        final layerNames = ['OpenStreetMap', 'CartoDB Dark', 'CartoDB Voyager', 'Stamen Terrain'];
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Carte: ${layerNames[newSelection]}'),
+                            duration: const Duration(seconds: 1),
+                          ),
+                        );
+                      },
                       icon: const Icon(Icons.layers)),
                   IconButton(
-                      onPressed: () => setState(() {
-                            NativeAndroidMethodChannel().getNativeBuild();
-                          }),
+                      tooltip: 'Prendre une photo',
+                      onPressed: () {
+                        debugPrint('Camera button pressed');
+                        _takePicture();
+                      },
                       icon: const Icon(Icons.camera)),
                   IconButton(
-                      onPressed: () => setState(() => settings = !settings),
-                      icon: const Icon(Icons.settings)),
+                      tooltip: settings ? 'Masquer paramètres' : 'Afficher paramètres',
+                      onPressed: () {
+                        debugPrint('Settings button pressed: $settings -> ${!settings}');
+                        setState(() {
+                          settings = !settings;
+                        });
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(settings ? 'Paramètres affichés' : 'Paramètres masqués'),
+                            duration: const Duration(seconds: 1),
+                          ),
+                        );
+                      },
+                      icon: Icon(settings ? Icons.settings : Icons.settings_outlined)),
                   // IconButton(
                   //     onPressed: () => setState(() => testMode = !testMode),
                   //     icon: const Text("-")),
@@ -288,6 +372,50 @@ class MapPageState extends State<MapPage> {
     });
   }
 
+  Future<void> _takePicture() async {
+    try {
+      // Demander la permission caméra
+      final cameraStatus = await ph.Permission.camera.request();
+      if (!cameraStatus.isGranted) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Permission caméra nécessaire pour prendre une photo'),
+            ),
+          );
+        }
+        return;
+      }
+
+      // Prendre une photo
+      final XFile? photo = await _imagePicker.pickImage(
+        source: ImageSource.camera,
+        imageQuality: 85,
+      );
+
+      if (photo != null) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Photo prise: ${photo.path}'),
+              duration: const Duration(seconds: 2),
+            ),
+          );
+        }
+        // Ici vous pouvez traiter l'image : la sauvegarder, l'envoyer, etc.
+        // Par exemple : await photo.saveTo('path/to/save');
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Erreur lors de la prise de photo: $e'),
+          ),
+        );
+      }
+    }
+  }
+
   void _reset() {
     setState(() {
       ObjectMgr.tempPolygonPoints.clear();
@@ -340,65 +468,82 @@ class MapPageState extends State<MapPage> {
       return BlocBuilder<DrawObjectsBloc, DrawObjectsState>(
           builder: (context, drawObjectState) {
         if (drawObjectState is DrawObjectsLoaded) {
-          return FlutterMap(
-            mapController: _mapController,
-            options: MapOptions(
-              // bounds: LatLngBounds(LatLng(1.56073, 104.1147), LatLng(1.16, 103.502)),
-              initialCenter: center,
-              // maxZoom: 18.0,
-              minZoom: 11.5,
-              initialZoom: 18.0,
-              // swPanBoundary: LatLng(56.6877, 11.5089),
-              // nePanBoundary: LatLng(56.7378, 11.6644),
-              onTap: _handleTap,
-              // plugins removed during migration
-            ),
-            // scale and edit layers removed during migration
-            // nonRotatedLayers: [...]
-            // layers: [...]
+          return Stack(
             children: [
+              FlutterMap(
+                mapController: _mapController,
+                options: MapOptions(
+                  // bounds: LatLngBounds(LatLng(1.56073, 104.1147), LatLng(1.16, 103.502)),
+                  initialCenter: center,
+                  // maxZoom: 18.0,
+                  minZoom: 11.5,
+                  initialZoom: _currentZoom,
+                  // swPanBoundary: LatLng(56.6877, 11.5089),
+                  // nePanBoundary: LatLng(56.7378, 11.6644),
+                  onTap: _handleTap,
+                  onMapEvent: (MapEvent mapEvent) {
+                    if (mapEvent is MapEventMove) {
+                      setState(() {
+                        _currentZoom = mapEvent.camera.zoom;
+                      });
+                    }
+                  },
+                  // plugins removed during migration
+                ),
+                // scale and edit layers removed during migration
+                // nonRotatedLayers: [...]
+                // layers: [...]
+                children: [
               TileLayer(
                 urlTemplate: tileLayers[layerSelection],
-                subdomains: const ['a', 'b', 'c'],
+                subdomains: layerSelection == 0 
+                    ? const <String>[]  // OpenStreetMap doesn't use subdomains
+                    : const ['a', 'b', 'c'],
               ),
 
               // Saved Polylines
               if (showLines)
                 PolylineLayer(
-                  polylines: List<Polyline>.of(
-                      objectMgr.generatePolylines(drawObjectState.polylines)),
+                  polylines: objectMgr
+                      .generatePolylines(drawObjectState.polylines)
+                      .where((pl) => pl.points.isNotEmpty)
+                      .toList(),
                 ),
 
               // Temporary polylines to show when creating a new polyline
-              PolylineLayer(
-                polylines: [
-                  Polyline(
-                    points: ObjectMgr.tempPolylinePoints,
-                    borderColor: objectMgr.getGreenFill,
-                    color: objectMgr.getGreenTransparent,
-                    borderStrokeWidth: 2.0,
-                    strokeWidth: 3.0,
-                  )
-                ],
-              ),
+              if (ObjectMgr.tempPolylinePoints.isNotEmpty)
+                PolylineLayer(
+                  polylines: [
+                    Polyline(
+                      points: ObjectMgr.tempPolylinePoints,
+                      borderColor: objectMgr.getGreenFill,
+                      color: objectMgr.getGreenTransparent,
+                      borderStrokeWidth: 2.0,
+                      strokeWidth: 3.0,
+                    )
+                  ],
+                ),
 
               // Saved Polygons
               if (showPolygon)
                 PolygonLayer(
-                  polygons: List<Polygon>.of(
-                      objectMgr.generatePolygons(drawObjectState.polygons)),
+                  polygons: objectMgr
+                      .generatePolygons(drawObjectState.polygons)
+                      .where((pg) => pg.points.isNotEmpty)
+                      .toList(),
                 ),
               // Temporary polygons to show when creating a new polygon
-              PolygonLayer(
-                polygons: [
-                  Polygon(
-                    points: ObjectMgr.tempPolygonPoints,
-                    color: objectMgr.getGreenTransparent,
-                    borderColor: objectMgr.getGreenFill,
-                    borderStrokeWidth: 2.0,
-                  )
-                ],
-              ),
+              if (ObjectMgr.tempPolygonPoints.isNotEmpty)
+                PolygonLayer(
+                  polygons: [
+                    Polygon(
+                      points: ObjectMgr.tempPolygonPoints,
+                      color: objectMgr.getGreenTransparent,
+                      borderColor: objectMgr.getGreenFill,
+                      borderStrokeWidth: 2.0,
+                    )
+                  ],
+                ),
               // Saved Circles
               if (showCircle)
                 CircleLayer(
@@ -464,6 +609,25 @@ class MapPageState extends State<MapPage> {
                         MarkerTapBehavior.togglePopupAndHideRest(),
                   ),
                 ),
+            ],
+              ),
+              // Grid overlay
+              Builder(
+                builder: (context) {
+                  return Positioned.fill(
+                    child: GridOverlay(
+                      showGrid: grid,
+                      gridColor: Colors.white,
+                      gridOpacity: 0.3,
+                    ),
+                  );
+                },
+              ),
+              // Scale overlay
+              ScaleOverlay(
+                backgroundColor: Colors.white,
+                textColor: Colors.black87,
+              ),
             ],
           );
         } else {

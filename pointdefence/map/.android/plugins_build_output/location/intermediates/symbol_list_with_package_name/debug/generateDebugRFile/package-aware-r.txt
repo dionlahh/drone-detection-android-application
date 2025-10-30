@@ -1,0 +1,2 @@
+com.lyokone.location
+drawable navigation_empty_icon

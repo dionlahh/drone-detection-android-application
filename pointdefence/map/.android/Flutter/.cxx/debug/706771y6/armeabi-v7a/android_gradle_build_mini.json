@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/antoinegallo/Documents/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/antoinegallo/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/antoinegallo/Documents/drone-detection-android-application/pointdefence/map/.android/Flutter/.cxx/debug/706771y6/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/antoinegallo/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/antoinegallo/Documents/drone-detection-android-application/pointdefence/map/.android/Flutter/.cxx/debug/706771y6/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

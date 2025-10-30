@@ -1,0 +1,28 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.lyokone.location" >
+4
+5    <uses-sdk android:minSdkVersion="21" />
+6
+7    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+7-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/location-6.0.2/android/src/main/AndroidManifest.xml:3:5-81
+7-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/location-6.0.2/android/src/main/AndroidManifest.xml:3:22-78
+8    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+8-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/location-6.0.2/android/src/main/AndroidManifest.xml:4:5-79
+8-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/location-6.0.2/android/src/main/AndroidManifest.xml:4:22-76
+9
+10    <application>
+10-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/location-6.0.2/android/src/main/AndroidManifest.xml:6:5-12:19
+11        <service
+11-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/location-6.0.2/android/src/main/AndroidManifest.xml:7:9-11:53
+12            android:name="com.lyokone.location.FlutterLocationService"
+12-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/location-6.0.2/android/src/main/AndroidManifest.xml:11:13-51
+13            android:enabled="true"
+13-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/location-6.0.2/android/src/main/AndroidManifest.xml:8:13-35
+14            android:exported="false"
+14-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/location-6.0.2/android/src/main/AndroidManifest.xml:9:13-37
+15            android:foregroundServiceType="location" />
+15-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/location-6.0.2/android/src/main/AndroidManifest.xml:10:13-53
+16    </application>
+17
+18</manifest>

@@ -153,13 +153,15 @@ class ObjectMgr {
   List<Polyline> generateDronePath() {
     List<Polyline> p = [];
     for (var i in _dronePath.getPolylines) {
-      p.add(Polyline(
-        points: i.points,
-        borderStrokeWidth: i.borderStrokeWidth,
-        borderColor: i.borderColor,
-        color: i.color,
-        strokeWidth: i.strokeWidth,
-      ));
+      if (i.points.isNotEmpty) {
+        p.add(Polyline(
+          points: i.points,
+          borderStrokeWidth: i.borderStrokeWidth,
+          borderColor: i.borderColor,
+          color: i.color,
+          strokeWidth: i.strokeWidth,
+        ));
+      }
     }
     return p;
   }
@@ -174,13 +176,17 @@ class ObjectMgr {
   List<Polyline> generatePolylines(List<Polylines> polylineList) {
     List<Polyline> p = [];
     for (var i in polylineList) {
-      p.add(Polyline(
-        points: i.points,
-        borderStrokeWidth: i.borderStrokeWidth,
-        borderColor: i.borderColor,
-        color: i.color,
-        strokeWidth: i.strokeWidth,
-      ));
+      if (i.points.isNotEmpty) {
+        p.add(Polyline(
+          points: i.points,
+          borderStrokeWidth: i.borderStrokeWidth,
+          borderColor: i.borderColor,
+          color: i.color,
+          strokeWidth: i.strokeWidth,
+          // Note: strokePattern not supported in flutter_map 8.x for dotted lines
+          // Dotted lines would require custom painting or a different approach
+        ));
+      }
     }
     return p;
   }
@@ -188,13 +194,17 @@ class ObjectMgr {
   List<Polyline> generateTempPolylines(List<Polylines> tempPolylineList) {
     List<Polyline> p = [];
     for (var i in tempPolylineList) {
-      p.add(Polyline(
-        points: i.points,
-        borderStrokeWidth: i.borderStrokeWidth,
-        borderColor: i.borderColor,
-        color: i.color,
-        strokeWidth: i.strokeWidth,
-      ));
+      if (i.points.isNotEmpty) {
+        p.add(Polyline(
+          points: i.points,
+          borderStrokeWidth: i.borderStrokeWidth,
+          borderColor: i.borderColor,
+          color: i.color,
+          strokeWidth: i.strokeWidth,
+          // Note: strokePattern not supported in flutter_map 8.x for dotted lines
+          // Dotted lines would require custom painting or a different approach
+        ));
+      }
     }
     return p;
   }
@@ -215,12 +225,14 @@ class ObjectMgr {
   List<Polygon> generatePolygons(List<Polygons> polygonList) {
     List<Polygon> p = [];
     for (var i in polygonList) {
-      p.add(Polygon(
-        points: i.points,
-        borderStrokeWidth: i.borderStrokeWidth,
-        borderColor: i.borderColor,
-        color: i.color,
-      ));
+      if (i.points.isNotEmpty) {
+        p.add(Polygon(
+          points: i.points,
+          borderStrokeWidth: i.borderStrokeWidth,
+          borderColor: i.borderColor,
+          color: i.color,
+        ));
+      }
     }
     return p;
   }
@@ -228,12 +240,14 @@ class ObjectMgr {
   List<Polygon> generateTempPolygons() {
     List<Polygon> p = [];
     for (var i in _tempPg.getPolygons) {
-      p.add(Polygon(
-        points: i.points,
-        borderStrokeWidth: i.borderStrokeWidth,
-        borderColor: i.borderColor,
-        color: i.color,
-      ));
+      if (i.points.isNotEmpty) {
+        p.add(Polygon(
+          points: i.points,
+          borderStrokeWidth: i.borderStrokeWidth,
+          borderColor: i.borderColor,
+          color: i.color,
+        ));
+      }
     }
     return p;
   }

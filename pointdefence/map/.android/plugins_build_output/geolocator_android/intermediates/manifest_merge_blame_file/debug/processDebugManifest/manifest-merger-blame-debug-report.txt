@@ -1,0 +1,21 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.baseflow.geolocator" >
+4
+5    <uses-sdk android:minSdkVersion="24" />
+6
+7    <application>
+7-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:4:5-10:19
+8        <service
+8-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:5:9-9:60
+9            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+9-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:9:17-58
+10            android:enabled="true"
+10-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:6:17-39
+11            android:exported="false"
+11-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:7:17-41
+12            android:foregroundServiceType="location" />
+12-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:8:17-57
+13    </application>
+14
+15</manifest>

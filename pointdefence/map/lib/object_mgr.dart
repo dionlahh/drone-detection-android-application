@@ -158,7 +158,6 @@ class ObjectMgr {
         borderStrokeWidth: i.borderStrokeWidth,
         borderColor: i.borderColor,
         color: i.color,
-        isDotted: i.isDotted,
         strokeWidth: i.strokeWidth,
       ));
     }
@@ -180,7 +179,6 @@ class ObjectMgr {
         borderStrokeWidth: i.borderStrokeWidth,
         borderColor: i.borderColor,
         color: i.color,
-        isDotted: i.isDotted,
         strokeWidth: i.strokeWidth,
       ));
     }
@@ -195,7 +193,6 @@ class ObjectMgr {
         borderStrokeWidth: i.borderStrokeWidth,
         borderColor: i.borderColor,
         color: i.color,
-        isDotted: i.isDotted,
         strokeWidth: i.strokeWidth,
       ));
     }
@@ -223,7 +220,6 @@ class ObjectMgr {
         borderStrokeWidth: i.borderStrokeWidth,
         borderColor: i.borderColor,
         color: i.color,
-        isDotted: i.isDotted,
       ));
     }
     return p;
@@ -237,7 +233,6 @@ class ObjectMgr {
         borderStrokeWidth: i.borderStrokeWidth,
         borderColor: i.borderColor,
         color: i.color,
-        isDotted: i.isDotted,
       ));
     }
     return p;
@@ -271,8 +266,8 @@ class ObjectMgr {
         width: i.width,
         height: i.height,
         rotate: i.rotate,
-        builder: i.builder,
-        anchorPos: AnchorPos.align(AnchorAlign.center),
+        alignment: Alignment.center,
+        child: Builder(builder: i.builder),
       ));
     }
     return m;
@@ -286,7 +281,7 @@ class ObjectMgr {
           width: i.width,
           height: i.height,
           rotate: i.rotate,
-          builder: i.builder));
+          child: Builder(builder: i.builder)));
     }
     return m;
   }
@@ -313,7 +308,6 @@ class ObjectMgr {
         borderStrokeWidth: i.borderStrokeWidth,
         borderColor: i.borderColor,
         color: i.color,
-        isDotted: i.isDotted,
       ));
     }
     return p;
@@ -332,8 +326,8 @@ class ObjectMgr {
           width: i.width,
           height: i.height,
           rotate: i.rotate,
-          builder: i.builder,
-          anchorPos: AnchorPos.align(AnchorAlign.center)));
+          alignment: Alignment.center,
+          child: Builder(builder: i.builder)));
     }
     return m;
   }

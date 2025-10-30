@@ -39,7 +39,7 @@ class DisplayService : Service() {
     private fun keepAliveTrick() {
         val notification = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(R.drawable.ic_dsta_logo)
-            .setSilent(true)
+            .setSound(null)
             .setOngoing(false)
             .build()
         startForeground(1, notification)

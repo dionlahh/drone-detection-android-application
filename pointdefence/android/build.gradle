@@ -1,16 +1,3 @@
-buildscript {
-    ext.kotlin_version = '1.6.10'
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
 allprojects {
     repositories {
         google()
@@ -26,6 +13,21 @@ subprojects {
     project.evaluationDependsOn(':app')
 }
 
-task clean(type: Delete) {
+tasks.register("clean", Delete) {
     delete rootProject.buildDir
+}
+
+// Ensure AGP 8+ namespace requirement is satisfied for third-party Android library modules
+subprojects { subproject ->
+    subproject.plugins.withId('com.android.library') {
+        def androidExt = subproject.extensions.findByName('android')
+        if (androidExt != null) {
+            def hasNsProp = androidExt.hasProperty('namespace')
+            def currentNs = hasNsProp ? androidExt.getProperty('namespace') : null
+            if (hasNsProp && (currentNs == null || currentNs.toString().trim().isEmpty())) {
+                def safeModule = subproject.name.replaceAll('[^A-Za-z0-9_]', '_')
+                androidExt.namespace = "dsta.c3d.pointdefence.${safeModule}"
+            }
+        }
+    }
 }

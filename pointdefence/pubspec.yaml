@@ -1,11 +1,9 @@
 name: pointdefence
-description: A new Flutter project.
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
-
-version: 1.0.0+1
+description: A new Flutter project
+publish_to: "none" # optional, if not publishing to pub.dev
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=3.6.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -16,23 +14,21 @@ dependencies:
   flutter_bloc: ^8.0.1
   equatable: ^2.0.3
   fluttericon: ^2.0.0
+  flutter_map: ^8.2.2
+  flutter_map_marker_popup: ^8.1.0
+  flutter_map_dragmarker: ^8.0.3
+  flutter_map_line_editor: ^8.0.0
+  latlong2: ^0.9.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
   assets:
     - assets/compass.png
-  # asset:
-  # module: #to make this a module
-  #   androidPackage: com.teste.embeded
-  #   iosBundleIdentifier: com.teste.embeded
 
-  # module:
-  #   androidX: true
-  #   androidPackage: com.example.flutter_module
-  #   iosBundleIdentifier: com.example.flutterModule
+dependency_overrides:
+  geodesy: ^0.10.2

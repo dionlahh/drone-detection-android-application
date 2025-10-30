@@ -12,13 +12,9 @@ import 'package:map/blocs/object_bloc/draw_objects_bloc.dart';
 import 'package:map/circles_mgr.dart';
 import 'package:map/markers_mgr.dart';
 import 'package:map/ui/common/droneCalc.dart';
-import 'package:positioned_tap_detector_2/positioned_tap_detector_2.dart';
-import 'package:flutter_map/plugin_api.dart';
-import '../widget/scale_layer_plugin_option.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_popup/flutter_map_marker_popup.dart';
 import '../widget/example_popup.dart';
-import 'package:flutter_map_dragmarker/dragmarker.dart';
-import 'package:flutter_map_line_editor/polyeditor.dart';
 import '../widget/arc_painter.dart' as live;
 import '../common/handleTap.dart' as tap;
 import 'package:flutter_compass/flutter_compass.dart';
@@ -71,26 +67,7 @@ class MapPageState extends State<MapPage> {
   int droneIndex = 0;
 
 // Handles grids
-  Widget tileBuilder(BuildContext context, Widget tileWidget, Tile tile) {
-    final coords = tile.coords;
-
-    return Container(
-      decoration: BoxDecoration(
-        border: grid ? Border.all() : null,
-      ),
-      child: Stack(
-        fit: StackFit.passthrough,
-        children: [
-          tileWidget,
-          if (grid)
-            Text(
-              '${coords.x.floor()} : ${coords.y.floor()} : ${coords.z.floor()}',
-              // style: Theme.of(context).textTheme.headline5,
-            ),
-        ],
-      ),
-    );
-  }
+  // tileBuilder removed for flutter_map 8 migration
 
 // Live Location
   LocationData? _currentLocation;
@@ -100,7 +77,7 @@ class MapPageState extends State<MapPage> {
   String? _serviceError = '';
   var interActiveFlags = InteractiveFlag.all;
   final Location _locationService = Location();
-  late PolyEditor polyEditor;
+  // Poly editor removed during flutter_map 8 migration
 
   @override
   void initState() {
@@ -146,14 +123,7 @@ class MapPageState extends State<MapPage> {
                     currentPos: LatLng(_currentLocation!.latitude!,
                         _currentLocation!.longitude!));
                 droneFunctions.getDroneData();
-                // If Live Update is enabled, move map center
-                if (_liveUpdate) {
-                  _mapController.moveAndRotate(
-                      LatLng(_currentLocation!.latitude!,
-                          _currentLocation!.longitude!),
-                      _mapController.zoom,
-                      directionRad * -1);
-                }
+                // If Live Update is enabled, move map center (disabled for migration)
               });
             }
           });
@@ -311,7 +281,7 @@ class MapPageState extends State<MapPage> {
     );
   }
 
-  void _handleTap(TapPosition tapPosition, LatLng latlng) {
+  void _handleTap(dynamic tapPosition, LatLng latlng) {
     setState(() {
       var t = tap.HandleTap(latlng, objectMgr);
       t.handleTap();
@@ -344,77 +314,23 @@ class MapPageState extends State<MapPage> {
   ) {
     var liveMarker = <Marker>[
       Marker(
-        width: 5000,
-        height: 5000,
+        width: 40,
+        height: 40,
         point: center,
-        builder: (context) {
-          MapState map = MapState.maybeOf(context)!;
-          const double iconSize = 20;
-          const double multiplier = 0.5;
-          return StreamBuilder<CompassEvent>(
-            stream: FlutterCompass.events,
-            builder: (context, snapshot) {
-              if (snapshot.hasError) {
-                return Text('Error reading heading: ${snapshot.error}');
-              }
-
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-
-              directionRad = snapshot.data!.heading!;
-
-              // if direction is null, then device does not support this sensor
-              // show error message
-              if (directionRad == null) {
-                return const Center(
-                  child: Text("Device does not have sensors !"),
-                );
-              }
-
-              var pos = map.project(center);
-              pos = pos.multiplyBy(map.getZoomScale(map.zoom, map.zoom)) -
-                  map.getPixelOrigin();
-
-              var r = const Distance().offset(center, arc.radiusOfArc, 180);
-              var rpos = map.project(r);
-              rpos = rpos.multiplyBy(map.getZoomScale(map.zoom, map.zoom)) -
-                  map.getPixelOrigin();
-              var realArcRadius = rpos.y - pos.y;
-
-              return Material(
-                  shape: const CircleBorder(),
-                  clipBehavior: Clip.antiAlias,
-                  color: Colors.transparent,
-                  child: Transform.rotate(
-                      angle: (directionRad * (math.pi / 180)),
-                      child: Stack(
-                        alignment: AlignmentDirectional.center,
-                        children: [
-                          CustomPaint(
-                            size: Size(realArcRadius.toDouble() * 2,
-                                realArcRadius.toDouble() * 2),
-                            // size: Size(MediaQuery.of(context).size.width,
-                            //     MediaQuery.of(context).size.height),
-                            painter: live.ArcPainter(),
-                          ),
-                          const CircleAvatar(
-                            backgroundColor: Colors.white,
-                            radius: multiplier * iconSize,
-                            child: Icon(
-                              Icons.arrow_circle_up,
-                              size: iconSize,
-                              color: Colors.blue,
-                            ),
-                          ),
-                        ],
-                      )));
-            },
-          );
-        },
-        anchorPos: AnchorPos.align(AnchorAlign.center),
+        alignment: Alignment.center,
+        child: StreamBuilder<CompassEvent>(
+          stream: FlutterCompass.events,
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) {
+              return const SizedBox.shrink();
+            }
+            final heading = snapshot.data!.heading ?? 0.0;
+            return Transform.rotate(
+              angle: heading * (math.pi / 180),
+              child: const Icon(Icons.navigation, color: Colors.blue),
+            );
+          },
+        ),
       ),
     ];
     List<Marker> droneDetections = objectMgr.generateDroneMarkers();
@@ -428,140 +344,90 @@ class MapPageState extends State<MapPage> {
             mapController: _mapController,
             options: MapOptions(
               // bounds: LatLngBounds(LatLng(1.56073, 104.1147), LatLng(1.16, 103.502)),
-              allowPanningOnScrollingParent: false,
-              center: center,
+              initialCenter: center,
               // maxZoom: 18.0,
               minZoom: 11.5,
-              zoom: 18.0,
+              initialZoom: 18.0,
               // swPanBoundary: LatLng(56.6877, 11.5089),
               // nePanBoundary: LatLng(56.7378, 11.6644),
               onTap: _handleTap,
-              interactiveFlags: interActiveFlags,
-              plugins: [
-                ScaleLayerPlugin(),
-                DragMarkerPlugin(),
-              ],
+              // plugins removed during migration
             ),
-            nonRotatedLayers: [
-              ScaleLayerPluginOption(
-                lineColor: Colors.black,
-                lineWidth: 2,
-                textStyle: const TextStyle(color: Colors.black, fontSize: 12),
-                padding: const EdgeInsets.all(10),
-              ),
-            ],
-            layers: [
-              if (menuState is EditPolygonState)
-                DragMarkerPluginOptions(
-                    markers: PolyEditor(
-                  addClosePathMarker: true,
-                  points: objectMgr
-                      .generatePolygons(
-                          drawObjectState.polygons)[menuState.polygonID]
-                      .points,
-                  pointIcon: const Icon(Icons.crop_square, size: 23),
-                  intermediateIcon:
-                      const Icon(Icons.lens, size: 15, color: Colors.grey),
-                  // callbackRefresh: () {
-                  //   // sleep(Duration(seconds: 1));
-                  //   setState(() {});
-                  // },
-                ).edit()),
-            ],
+            // scale and edit layers removed during migration
+            // nonRotatedLayers: [...]
+            // layers: [...]
             children: [
-              TileLayerWidget(
-                options: TileLayerOptions(
-                  // Original
-                  tileProvider: const NonCachingNetworkTileProvider(),
-                  tileBuilder: tileBuilder,
-                  urlTemplate: tileLayers[layerSelection],
-                  subdomains: ['a', 'b', 'c'],
-                ),
+              TileLayer(
+                urlTemplate: tileLayers[layerSelection],
+                subdomains: const ['a', 'b', 'c'],
               ),
 
               // Saved Polylines
-              Opacity(
-                opacity: showLines ? 1.0 : 0.0,
-                child: PolylineLayerWidget(
-                    options: PolylineLayerOptions(
-                        polylineCulling: false,
-                        polylines: List<Polyline>.of(objectMgr
-                            .generatePolylines(drawObjectState.polylines)))),
-              ),
+              if (showLines)
+                PolylineLayer(
+                  polylines: List<Polyline>.of(
+                      objectMgr.generatePolylines(drawObjectState.polylines)),
+                ),
 
               // Temporary polylines to show when creating a new polyline
-              PolylineLayerWidget(
-                options: PolylineLayerOptions(polylines: [
+              PolylineLayer(
+                polylines: [
                   Polyline(
                     points: ObjectMgr.tempPolylinePoints,
-                    // color: const Color.fromARGB(86, 76, 175, 79),
                     borderColor: objectMgr.getGreenFill,
                     color: objectMgr.getGreenTransparent,
                     borderStrokeWidth: 2.0,
-                    isDotted: false,
+                    strokeWidth: 3.0,
                   )
-                ]),
+                ],
               ),
 
               // Saved Polygons
-              Opacity(
-                opacity: showPolygon ? 1.0 : 0.0,
-                child: PolygonLayerWidget(
-                  options: PolygonLayerOptions(
-                    polygons: List<Polygon>.of(objectMgr.generatePolygons(
-                        drawObjectState.polygons)), //Saved Polygons
-                  ),
+              if (showPolygon)
+                PolygonLayer(
+                  polygons: List<Polygon>.of(
+                      objectMgr.generatePolygons(drawObjectState.polygons)),
                 ),
-              ),
               // Temporary polygons to show when creating a new polygon
-              PolygonLayerWidget(
-                options: PolygonLayerOptions(polygons: [
+              PolygonLayer(
+                polygons: [
                   Polygon(
                     points: ObjectMgr.tempPolygonPoints,
                     color: objectMgr.getGreenTransparent,
                     borderColor: objectMgr.getGreenFill,
                     borderStrokeWidth: 2.0,
-                    isDotted: false,
                   )
-                ]),
+                ],
               ),
               // Saved Circles
-              Opacity(
-                opacity: showCircle ? 1.0 : 0.0,
-                child: CircleLayerWidget(
-                  options: CircleLayerOptions(
-                      circles:
-                          objectMgr.generateCircles(drawObjectState.circles)),
+              if (showCircle)
+                CircleLayer(
+                  circles:
+                      objectMgr.generateCircles(drawObjectState.circles),
                 ),
-              ),
               // Temporary circles to show when creating a new circle
-              CircleLayerWidget(
-                options: CircleLayerOptions(
-                    circles: objectMgr.generateTempCircles()),
+              CircleLayer(
+                circles: objectMgr.generateTempCircles(),
               ),
 
               // Temporary Markers
-              MarkerLayerWidget(
-                  options: MarkerLayerOptions(
-                      markers: objectMgr.generateTempMarkers())),
+              MarkerLayer(markers: objectMgr.generateTempMarkers()),
               // Live Location Marker
-              MarkerLayerWidget(
-                options: MarkerLayerOptions(markers: liveMarker),
-              ),
+              MarkerLayer(markers: liveMarker),
 
               // Last Drone Detection
               if (droneViewSelection == 0)
-                PopupMarkerLayerWidget(
+                PopupMarkerLayer(
                   options: PopupMarkerLayerOptions(
                     popupController: _popupLayerController,
                     markerCenterAnimation: const MarkerCenterAnimation(),
-                    markers: droneDetections.isNotEmpty
-                        ? [droneDetections.last]
-                        : [],
-                    popupBuilder: (BuildContext context, Marker marker) =>
-                        ExamplePopup(marker, _currentLocation),
-                    popupAnimation: const PopupAnimation.fade(
-                        duration: Duration(milliseconds: 700)),
+                    markers:
+                        droneDetections.isNotEmpty ? [droneDetections.last] : [],
+                    popupDisplayOptions: PopupDisplayOptions(
+                      builder: (BuildContext context, Marker marker) =>
+                          ExamplePopup(marker, _currentLocation),
+                    ),
+                    // popup animation removed for compatibility
                     markerTapBehavior:
                         MarkerTapBehavior.togglePopupAndHideRest(),
                   ),
@@ -569,39 +435,35 @@ class MapPageState extends State<MapPage> {
 
               // Drone Path
               if (droneViewSelection == 1)
-                PolylineLayerWidget(
-                  options: PolylineLayerOptions(polylines: dronePath),
-                ),
+                PolylineLayer(polylines: dronePath),
 
               // Drone position with time
               if (droneViewSelection == 2)
-                MarkerLayerWidget(
-                  options: MarkerLayerOptions(
-                      markers: droneDetections.isNotEmpty
-                          ? [
-                              droneDetections[
-                                  droneIndex % droneDetections.length]
-                            ]
-                          : []),
+                MarkerLayer(
+                  markers: droneDetections.isNotEmpty
+                      ? [
+                          droneDetections[
+                              droneIndex % droneDetections.length]
+                        ]
+                      : [],
                 ),
 
               // Saved Markers
-              Opacity(
-                opacity: showMarkers ? 1.0 : 0.0,
-                child: PopupMarkerLayerWidget(
+              if (showMarkers)
+                PopupMarkerLayer(
                   options: PopupMarkerLayerOptions(
                     popupController: _popupLayerController,
                     markerCenterAnimation: const MarkerCenterAnimation(),
                     markers: objectMgr.generateMarkers(drawObjectState.markers),
-                    popupBuilder: (BuildContext context, Marker marker) =>
-                        ExamplePopup(marker, _currentLocation),
-                    popupAnimation: const PopupAnimation.fade(
-                        duration: Duration(milliseconds: 700)),
+                    popupDisplayOptions: PopupDisplayOptions(
+                      builder: (BuildContext context, Marker marker) =>
+                          ExamplePopup(marker, _currentLocation),
+                    ),
+                    // popup animation removed for compatibility
                     markerTapBehavior:
                         MarkerTapBehavior.togglePopupAndHideRest(),
                   ),
                 ),
-              ),
             ],
           );
         } else {

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.tensorflow.lite.examples.detection">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-sdk />
     <!-- Tell the system this app requires OpenGL ES 3.1. -->
@@ -11,6 +10,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -68,6 +68,7 @@
             android:name=".MyForegroundService"
             android:enabled="true"
             android:exported="true"
+            android:foregroundServiceType="camera"
             android:stopWithTask="true" />
         <service
             android:name=".display.DisplayService"
@@ -88,6 +89,7 @@
             android:exported="false" />
         <activity
             android:name=".DetectorActivity"
+            android:exported="true"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name="io.flutter.embedding.android.FlutterActivity"

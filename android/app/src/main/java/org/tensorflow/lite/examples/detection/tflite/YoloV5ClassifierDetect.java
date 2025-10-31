@@ -186,7 +186,10 @@ public class YoloV5ClassifierDetect implements Classifier {
     }
 
     public void setNumThreads(int num_threads) {
-        if (tfLite != null) tfLite.setNumThreads(num_threads);
+        // Note: setNumThreads is no longer available directly on Interpreter in TensorFlow Lite 2.8.0+
+        // The number of threads must be set when creating the Interpreter via Interpreter.Options
+        // For now, this method is kept for compatibility but does nothing
+        // TODO: Implement proper thread configuration by recreating the Interpreter with new options
     }
 
     @Override

@@ -1,0 +1,233 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.tensorflow.lite.examples.detection"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+7-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:4:5-17
+8        android:minSdkVersion="23"
+9        android:targetSdkVersion="34" />
+10    <!-- Tell the system this app requires OpenGL ES 3.1. -->
+11    <uses-feature
+11-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:6:5-8:35
+12        android:glEsVersion="0x00030001"
+12-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:7:9-41
+13        android:required="true" />
+13-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:8:9-32
+14
+15    <uses-permission android:name="android.permission.CAMERA" />
+15-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:10:5-65
+15-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:10:22-62
+16    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+16-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:11:5-71
+16-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:11:22-68
+17    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+17-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:12:5-77
+17-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:12:22-74
+18    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+18-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:13:5-84
+18-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:13:22-81
+19
+20    <uses-feature android:name="android.hardware.camera" />
+20-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:15:5-60
+20-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:15:19-57
+21    <uses-feature android:name="android.hardware.camera.autofocus" />
+21-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:16:5-70
+21-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:16:19-67
+22
+23    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+23-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:18:5-80
+23-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:18:22-77
+24    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+24-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:19:5-81
+24-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:19:22-78
+25    <uses-permission android:name="android.permission.INTERNET" />
+25-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:20:5-67
+25-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:20:22-64
+26    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+26-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:21:5-79
+26-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:21:22-76
+27
+28    <application
+28-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:23:5-102:19
+29        android:allowBackup="false"
+29-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:24:9-36
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/e25131572ccdd2d1d536ef9897fcb095/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+31        android:debuggable="true"
+31-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:25:9-34
+32        android:extractNativeLibs="false"
+33        android:hardwareAccelerated="true"
+33-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:26:9-43
+34        android:icon="@drawable/ic_drone_icon"
+34-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:27:9-47
+35        android:installLocation="internalOnly"
+35-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:28:9-47
+36        android:label="Point Defence"
+36-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:29:9-38
+37        android:roundIcon="@drawable/ic_drone_icon"
+37-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:30:9-52
+38        android:supportsRtl="true"
+38-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:31:9-35
+39        android:theme="@style/AppTheme.ObjectDetection" >
+39-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:32:9-56
+40        <activity
+40-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:33:9-35:40
+41            android:name="org.tensorflow.lite.examples.detection.trial.CalibrateActivity"
+41-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:34:13-52
+42            android:exported="false" />
+42-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:35:13-37
+43        <activity
+43-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:36:9-38:40
+44            android:name="org.tensorflow.lite.examples.detection.display.ClientActivity"
+44-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:37:13-51
+45            android:exported="false" />
+45-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:38:13-37
+46
+47        <service
+47-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:40:9-43:39
+48            android:name="org.tensorflow.lite.examples.detection.CameraService"
+48-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:41:13-42
+49            android:enabled="true"
+49-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:42:13-35
+50            android:exported="true" />
+50-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:43:13-36
+51
+52        <activity
+52-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:45:9-48:58
+53            android:name="org.tensorflow.lite.examples.detection.trial.SpatialActivity"
+53-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:46:13-50
+54            android:exported="false"
+54-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:47:13-37
+55            android:parentActivityName="org.tensorflow.lite.examples.detection.MainActivity" />
+55-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:48:13-55
+56        <activity
+56-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:49:9-51:40
+57            android:name="org.tensorflow.lite.examples.detection.display.DisplayActivity"
+57-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:50:13-52
+58            android:exported="false" />
+58-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:51:13-37
+59        <activity
+59-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:52:9-55:58
+60            android:name="org.tensorflow.lite.examples.detection.trial.RTSPActivity"
+60-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:53:13-47
+61            android:exported="false"
+61-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:54:13-37
+62            android:parentActivityName="org.tensorflow.lite.examples.detection.MainActivity" />
+62-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:55:13-55
+63        <activity
+63-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:56:9-58:40
+64            android:name="org.tensorflow.lite.examples.detection.trial.SensorActivity"
+64-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:57:13-49
+65            android:exported="false" />
+65-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:58:13-37
+66        <activity
+66-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:59:9-61:40
+67            android:name="org.tensorflow.lite.examples.detection.trial.DragAndDropActivity"
+67-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:60:13-54
+68            android:exported="false" />
+68-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:61:13-37
+69        <activity
+69-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:62:9-65:58
+70            android:name="org.tensorflow.lite.examples.detection.trial.ImageDetectionActivity"
+70-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:63:13-57
+71            android:exported="false"
+71-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:64:13-37
+72            android:parentActivityName="org.tensorflow.lite.examples.detection.MainActivity" />
+72-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:65:13-55
+73
+74        <service
+74-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:67:9-72:43
+75            android:name="org.tensorflow.lite.examples.detection.MyForegroundService"
+75-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:68:13-48
+76            android:enabled="true"
+76-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:69:13-35
+77            android:exported="true"
+77-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:70:13-36
+78            android:foregroundServiceType="camera"
+78-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:71:13-51
+79            android:stopWithTask="true" />
+79-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:72:13-40
+80        <service
+80-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:73:9-75:63
+81            android:name="org.tensorflow.lite.examples.detection.display.DisplayService"
+81-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:74:13-51
+82            android:foregroundServiceType="mediaProjection" />
+82-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:75:13-60
+83
+84        <activity
+84-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:77:9-86:20
+85            android:name="org.tensorflow.lite.examples.detection.SplashActivity"
+85-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:78:13-43
+86            android:exported="true"
+86-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:79:13-36
+87            android:screenOrientation="portrait" >
+87-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:80:13-49
+88            <intent-filter>
+88-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:81:13-85:29
+89                <action android:name="android.intent.action.MAIN" />
+89-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:82:17-69
+89-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:82:25-66
+90
+91                <category android:name="android.intent.category.LAUNCHER" />
+91-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:84:17-77
+91-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:84:27-74
+92            </intent-filter>
+93        </activity>
+94        <activity
+94-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:87:9-89:40
+95            android:name="org.tensorflow.lite.examples.detection.MyFlutterActivity"
+95-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:88:13-46
+96            android:exported="false" />
+96-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:89:13-37
+97        <activity
+97-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:90:9-93:58
+98            android:name="org.tensorflow.lite.examples.detection.DetectorActivity"
+98-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:91:13-45
+99            android:exported="true"
+99-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:92:13-36
+100            android:parentActivityName="org.tensorflow.lite.examples.detection.MainActivity" />
+100-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:93:13-55
+101        <activity
+101-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:94:9-100:58
+102            android:name="io.flutter.embedding.android.FlutterActivity"
+102-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:95:13-72
+103            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+103-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:96:13-144
+104            android:hardwareAccelerated="true"
+104-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:97:13-47
+105            android:parentActivityName="org.tensorflow.lite.examples.detection.MainActivity"
+105-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:98:13-55
+106            android:theme="@style/LaunchTheme"
+106-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:99:13-47
+107            android:windowSoftInputMode="adjustResize" />
+107-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:100:13-55
+108        <activity android:name="org.tensorflow.lite.examples.detection.MainActivity" />
+108-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:101:9-50
+108-->/Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:101:19-47
+109
+110        <provider
+110-->[androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+111            android:name="androidx.startup.InitializationProvider"
+111-->[androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+112            android:authorities="org.tensorflow.lite.examples.detection.androidx-startup"
+112-->[androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+113            android:exported="false" >
+113-->[androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+114            <meta-data
+114-->[androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+115                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+115-->[androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+116                android:value="androidx.startup" />
+116-->[androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+117            <meta-data
+117-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+118                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+118-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+119                android:value="androidx.startup" />
+119-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+120        </provider>
+121    </application>
+122
+123</manifest>

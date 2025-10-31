@@ -1,8 +1,8 @@
 package org.tensorflow.lite.examples.detection.utils;
 
 public class AppConfiguration {
-    // Debug Mode
-    public static boolean debugMode = false;
+    // Debug Mode - mis à true pour lancer MainActivity directement (avec menu pour accéder à DetectorActivity)
+    public static boolean debugMode = true;
 
     // Launch Mode (Flutter module with OD or RTSP)
     public static String nativeBuild = "Detection";

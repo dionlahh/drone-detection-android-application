@@ -1,0 +1,424 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:2:1-104:12
+INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:2:1-104:12
+INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:2:1-104:12
+INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:2:1-104:12
+MERGED from [com.google.android.material:material:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/3eeb9d1cf744256682aa52405df79844/transformed/material-1.8.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/antoinegallo/.gradle/caches/8.9/transforms/e20a580306001854ab784d50c5486468/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/e946d16bebf4c183eab504bae3ed11cb/transformed/jetified-appcompat-resources-1.5.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/8a2640957076059532843931a0b4ee61/transformed/appcompat-1.5.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/feee465da437713cbd62ab73c3d0b2dd/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/antoinegallo/.gradle/caches/8.9/transforms/074dd11f2e3ed801dbfeac787ef552af/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/bcd5ecb39370ac46d45e38816ecbc543/transformed/jetified-activity-1.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/9cedc46bdce10af458b9805dd1b7ece7/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/70d2644b58abf75a2085a47a4788824e/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/6b0fb5af0c270b8d56017f2e7e372224/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/42e15425b38f821bf252c7ccd24c1797/transformed/lifecycle-viewmodel-2.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b1293aae9934f9c0410a6a3c19d57475/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/37b1f7bf02a6b5c5577bb2900a743e80/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/03f11ff970cc9244f58a3f7efca0d1b1/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/63a459fca92e30d656d82019d37f80c2/transformed/jetified-rtplibrary-2.1.7/AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtsp:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/70d54f6a2967a9dc708785a7127a521a/transformed/jetified-rtsp-2.1.7/AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtmp:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/8d8a71dde95fc9c9d79ab9bbdf936640/transformed/jetified-rtmp-2.1.7/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b4cebec3dff19856d5f391e2fba859ac/transformed/coordinatorlayout-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [org.tensorflow:tensorflow-lite-support:0.3.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/4893abb294423a084745adc82a98ebaf/transformed/jetified-tensorflow-lite-support-0.3.1/AndroidManifest.xml:2:1-5:12
+MERGED from [org.tensorflow:tensorflow-lite:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b529b3c1239240f2e538b5e5fba91974/transformed/jetified-tensorflow-lite-2.8.0/AndroidManifest.xml:2:1-12:12
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/ac924e8f4d3e69bcb7ccb10aa3c04482/transformed/jetified-tensorflow-lite-gpu-2.8.0/AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d6c2261a2ff6f744669548550c9ada77/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/95c530c57bac996edae274ef3d761c8a/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/c555ed538038184ef38f951d71833e8a/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/134c5fd95647644eb1179191e7852df2/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/1e0f0c6dd41fd68fe9ea2d5b84beb62d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:encoder:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/25d93804784ec4b55625ba067c6d4f30/transformed/jetified-encoder-2.1.7/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/abacbf501eae6443a0a7f69842510319/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/57ecfcc2ba9e090f32b2adab3dd1a8db/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/8a8a2ee412b589b9e101e874476759b2/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/eda3025ce53f58acabcaef81d4ddf75d/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/e25131572ccdd2d1d536ef9897fcb095/transformed/core-1.8.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/902bd243f0121a0f19d0601f905e8d9a/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/0d2e8c5d6725994042fbb72e74e8fb40/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/fe8d639c36f66210369f894d7b6c0e23/transformed/lifecycle-runtime-2.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b344addbb1aafba9ab3231ee1fd70fca/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/7d1b4c280dacc5c53d0a8c5306fec519/transformed/lifecycle-livedata-core-2.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/c67358c03534a402b02a13e8bc25c92c/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/db52e8f87a59c85ffdf54503accceaae/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/848798f2bee486a8fa169589997bb4e1/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/de9adc86ae7db6491b534d3a81a01ba2/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/1f4dcaad8d5dfdd421301607d856f93f/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/bdfc4d7364bd97102c356c0d44513f05/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/0b84d5731bea951e19e19dd719abf4de/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d168e15ead65b576c0f7a9aa16a671e6/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [org.tensorflow:tensorflow-lite-support-api:0.3.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/cd6ad27dc9e7254d42ef20eab8d78cc2/transformed/jetified-tensorflow-lite-support-api-0.3.1/AndroidManifest.xml:2:1-5:12
+MERGED from [org.tensorflow:tensorflow-lite-api:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/c0801889a28c1828e7a0f52741cdfd51/transformed/jetified-tensorflow-lite-api-2.8.0/AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/antoinegallo/.gradle/caches/8.9/transforms/e47c9f9a43d6373970d37a60ff924d09/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
+	package
+		INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:4:5-17
+INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:4:5-17
+INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:4:5-17
+MERGED from [com.google.android.material:material:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/3eeb9d1cf744256682aa52405df79844/transformed/material-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/3eeb9d1cf744256682aa52405df79844/transformed/material-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/antoinegallo/.gradle/caches/8.9/transforms/e20a580306001854ab784d50c5486468/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/antoinegallo/.gradle/caches/8.9/transforms/e20a580306001854ab784d50c5486468/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/e946d16bebf4c183eab504bae3ed11cb/transformed/jetified-appcompat-resources-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/e946d16bebf4c183eab504bae3ed11cb/transformed/jetified-appcompat-resources-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/8a2640957076059532843931a0b4ee61/transformed/appcompat-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/8a2640957076059532843931a0b4ee61/transformed/appcompat-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/feee465da437713cbd62ab73c3d0b2dd/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/feee465da437713cbd62ab73c3d0b2dd/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/antoinegallo/.gradle/caches/8.9/transforms/074dd11f2e3ed801dbfeac787ef552af/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/antoinegallo/.gradle/caches/8.9/transforms/074dd11f2e3ed801dbfeac787ef552af/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/bcd5ecb39370ac46d45e38816ecbc543/transformed/jetified-activity-1.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/bcd5ecb39370ac46d45e38816ecbc543/transformed/jetified-activity-1.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/9cedc46bdce10af458b9805dd1b7ece7/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/9cedc46bdce10af458b9805dd1b7ece7/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/70d2644b58abf75a2085a47a4788824e/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/70d2644b58abf75a2085a47a4788824e/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/6b0fb5af0c270b8d56017f2e7e372224/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/6b0fb5af0c270b8d56017f2e7e372224/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/42e15425b38f821bf252c7ccd24c1797/transformed/lifecycle-viewmodel-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/42e15425b38f821bf252c7ccd24c1797/transformed/lifecycle-viewmodel-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b1293aae9934f9c0410a6a3c19d57475/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b1293aae9934f9c0410a6a3c19d57475/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/37b1f7bf02a6b5c5577bb2900a743e80/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/37b1f7bf02a6b5c5577bb2900a743e80/transformed/jetified-core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/03f11ff970cc9244f58a3f7efca0d1b1/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/03f11ff970cc9244f58a3f7efca0d1b1/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/63a459fca92e30d656d82019d37f80c2/transformed/jetified-rtplibrary-2.1.7/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/63a459fca92e30d656d82019d37f80c2/transformed/jetified-rtplibrary-2.1.7/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtsp:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/70d54f6a2967a9dc708785a7127a521a/transformed/jetified-rtsp-2.1.7/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtsp:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/70d54f6a2967a9dc708785a7127a521a/transformed/jetified-rtsp-2.1.7/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtmp:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/8d8a71dde95fc9c9d79ab9bbdf936640/transformed/jetified-rtmp-2.1.7/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtmp:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/8d8a71dde95fc9c9d79ab9bbdf936640/transformed/jetified-rtmp-2.1.7/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b4cebec3dff19856d5f391e2fba859ac/transformed/coordinatorlayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b4cebec3dff19856d5f391e2fba859ac/transformed/coordinatorlayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [org.tensorflow:tensorflow-lite-support:0.3.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/4893abb294423a084745adc82a98ebaf/transformed/jetified-tensorflow-lite-support-0.3.1/AndroidManifest.xml:4:3-71
+MERGED from [org.tensorflow:tensorflow-lite-support:0.3.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/4893abb294423a084745adc82a98ebaf/transformed/jetified-tensorflow-lite-support-0.3.1/AndroidManifest.xml:4:3-71
+MERGED from [org.tensorflow:tensorflow-lite:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b529b3c1239240f2e538b5e5fba91974/transformed/jetified-tensorflow-lite-2.8.0/AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b529b3c1239240f2e538b5e5fba91974/transformed/jetified-tensorflow-lite-2.8.0/AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/ac924e8f4d3e69bcb7ccb10aa3c04482/transformed/jetified-tensorflow-lite-gpu-2.8.0/AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/ac924e8f4d3e69bcb7ccb10aa3c04482/transformed/jetified-tensorflow-lite-gpu-2.8.0/AndroidManifest.xml:7:5-8:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d6c2261a2ff6f744669548550c9ada77/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d6c2261a2ff6f744669548550c9ada77/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/95c530c57bac996edae274ef3d761c8a/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/95c530c57bac996edae274ef3d761c8a/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/c555ed538038184ef38f951d71833e8a/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/c555ed538038184ef38f951d71833e8a/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/134c5fd95647644eb1179191e7852df2/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/134c5fd95647644eb1179191e7852df2/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/1e0f0c6dd41fd68fe9ea2d5b84beb62d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/1e0f0c6dd41fd68fe9ea2d5b84beb62d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:encoder:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/25d93804784ec4b55625ba067c6d4f30/transformed/jetified-encoder-2.1.7/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.pedroSG94.rtmp-rtsp-stream-client-java:encoder:2.1.7] /Users/antoinegallo/.gradle/caches/8.9/transforms/25d93804784ec4b55625ba067c6d4f30/transformed/jetified-encoder-2.1.7/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/abacbf501eae6443a0a7f69842510319/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/abacbf501eae6443a0a7f69842510319/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/57ecfcc2ba9e090f32b2adab3dd1a8db/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/57ecfcc2ba9e090f32b2adab3dd1a8db/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/8a8a2ee412b589b9e101e874476759b2/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/8a8a2ee412b589b9e101e874476759b2/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/eda3025ce53f58acabcaef81d4ddf75d/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/eda3025ce53f58acabcaef81d4ddf75d/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/e25131572ccdd2d1d536ef9897fcb095/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/e25131572ccdd2d1d536ef9897fcb095/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/902bd243f0121a0f19d0601f905e8d9a/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/902bd243f0121a0f19d0601f905e8d9a/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/0d2e8c5d6725994042fbb72e74e8fb40/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/0d2e8c5d6725994042fbb72e74e8fb40/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/fe8d639c36f66210369f894d7b6c0e23/transformed/lifecycle-runtime-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/fe8d639c36f66210369f894d7b6c0e23/transformed/lifecycle-runtime-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b344addbb1aafba9ab3231ee1fd70fca/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b344addbb1aafba9ab3231ee1fd70fca/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/7d1b4c280dacc5c53d0a8c5306fec519/transformed/lifecycle-livedata-core-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/7d1b4c280dacc5c53d0a8c5306fec519/transformed/lifecycle-livedata-core-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/c67358c03534a402b02a13e8bc25c92c/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/c67358c03534a402b02a13e8bc25c92c/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/db52e8f87a59c85ffdf54503accceaae/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/db52e8f87a59c85ffdf54503accceaae/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/848798f2bee486a8fa169589997bb4e1/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/848798f2bee486a8fa169589997bb4e1/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/de9adc86ae7db6491b534d3a81a01ba2/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/de9adc86ae7db6491b534d3a81a01ba2/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/1f4dcaad8d5dfdd421301607d856f93f/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/1f4dcaad8d5dfdd421301607d856f93f/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/bdfc4d7364bd97102c356c0d44513f05/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/bdfc4d7364bd97102c356c0d44513f05/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/0b84d5731bea951e19e19dd719abf4de/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/0b84d5731bea951e19e19dd719abf4de/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d168e15ead65b576c0f7a9aa16a671e6/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d168e15ead65b576c0f7a9aa16a671e6/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [org.tensorflow:tensorflow-lite-support-api:0.3.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/cd6ad27dc9e7254d42ef20eab8d78cc2/transformed/jetified-tensorflow-lite-support-api-0.3.1/AndroidManifest.xml:4:3-71
+MERGED from [org.tensorflow:tensorflow-lite-support-api:0.3.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/cd6ad27dc9e7254d42ef20eab8d78cc2/transformed/jetified-tensorflow-lite-support-api-0.3.1/AndroidManifest.xml:4:3-71
+MERGED from [org.tensorflow:tensorflow-lite-api:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/c0801889a28c1828e7a0f52741cdfd51/transformed/jetified-tensorflow-lite-api-2.8.0/AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite-api:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/c0801889a28c1828e7a0f52741cdfd51/transformed/jetified-tensorflow-lite-api-2.8.0/AndroidManifest.xml:7:5-8:41
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/antoinegallo/.gradle/caches/8.9/transforms/e47c9f9a43d6373970d37a60ff924d09/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/antoinegallo/.gradle/caches/8.9/transforms/e47c9f9a43d6373970d37a60ff924d09/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+	android:targetSdkVersion
+		INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml
+		MERGED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:4:5-17
+		MERGED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:4:5-17
+		MERGED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:4:5-17
+uses-feature#0x00030001
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:6:5-8:35
+	android:glEsVersion
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:7:9-41
+	android:required
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:8:9-32
+uses-permission#android.permission.CAMERA
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:10:5-65
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:10:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:11:5-71
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:11:22-68
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:12:5-77
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:12:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE_CAMERA
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:13:5-84
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:13:22-81
+uses-feature#android.hardware.camera
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:15:5-60
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:15:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:16:5-70
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:16:19-67
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:18:5-80
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:18:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:19:5-81
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:19:22-78
+uses-permission#android.permission.INTERNET
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:20:5-67
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:20:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:21:5-79
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:21:22-76
+application
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:23:5-102:19
+INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:23:5-102:19
+MERGED from [com.google.android.material:material:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/3eeb9d1cf744256682aa52405df79844/transformed/material-1.8.0/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/3eeb9d1cf744256682aa52405df79844/transformed/material-1.8.0/AndroidManifest.xml:24:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/antoinegallo/.gradle/caches/8.9/transforms/e20a580306001854ab784d50c5486468/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/antoinegallo/.gradle/caches/8.9/transforms/e20a580306001854ab784d50c5486468/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b529b3c1239240f2e538b5e5fba91974/transformed/jetified-tensorflow-lite-2.8.0/AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/b529b3c1239240f2e538b5e5fba91974/transformed/jetified-tensorflow-lite-2.8.0/AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/ac924e8f4d3e69bcb7ccb10aa3c04482/transformed/jetified-tensorflow-lite-gpu-2.8.0/AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/ac924e8f4d3e69bcb7ccb10aa3c04482/transformed/jetified-tensorflow-lite-gpu-2.8.0/AndroidManifest.xml:10:5-20
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/e25131572ccdd2d1d536ef9897fcb095/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/e25131572ccdd2d1d536ef9897fcb095/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/0d2e8c5d6725994042fbb72e74e8fb40/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/0d2e8c5d6725994042fbb72e74e8fb40/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/db52e8f87a59c85ffdf54503accceaae/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/db52e8f87a59c85ffdf54503accceaae/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [org.tensorflow:tensorflow-lite-api:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/c0801889a28c1828e7a0f52741cdfd51/transformed/jetified-tensorflow-lite-api-2.8.0/AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite-api:2.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/c0801889a28c1828e7a0f52741cdfd51/transformed/jetified-tensorflow-lite-api-2.8.0/AndroidManifest.xml:10:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/antoinegallo/.gradle/caches/8.9/transforms/e47c9f9a43d6373970d37a60ff924d09/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/antoinegallo/.gradle/caches/8.9/transforms/e47c9f9a43d6373970d37a60ff924d09/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:7:5-20
+	android:extractNativeLibs
+		INJECTED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.8.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/e25131572ccdd2d1d536ef9897fcb095/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:31:9-35
+	android:label
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:29:9-38
+	android:hardwareAccelerated
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:26:9-43
+	android:debuggable
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:25:9-34
+	android:roundIcon
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:30:9-52
+	android:installLocation
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:28:9-47
+	android:icon
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:27:9-47
+	android:allowBackup
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:24:9-36
+	android:theme
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:32:9-56
+activity#org.tensorflow.lite.examples.detection.trial.CalibrateActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:33:9-35:40
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:34:13-52
+activity#org.tensorflow.lite.examples.detection.display.ClientActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:37:13-51
+service#org.tensorflow.lite.examples.detection.CameraService
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:40:9-43:39
+	android:enabled
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:42:13-35
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:43:13-36
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:41:13-42
+activity#org.tensorflow.lite.examples.detection.trial.SpatialActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:45:9-48:58
+	android:parentActivityName
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:48:13-55
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:46:13-50
+activity#org.tensorflow.lite.examples.detection.display.DisplayActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:49:9-51:40
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:51:13-37
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:50:13-52
+activity#org.tensorflow.lite.examples.detection.trial.RTSPActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:52:9-55:58
+	android:parentActivityName
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:55:13-55
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:54:13-37
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:53:13-47
+activity#org.tensorflow.lite.examples.detection.trial.SensorActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:56:9-58:40
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:58:13-37
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:57:13-49
+activity#org.tensorflow.lite.examples.detection.trial.DragAndDropActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:59:9-61:40
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:61:13-37
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:60:13-54
+activity#org.tensorflow.lite.examples.detection.trial.ImageDetectionActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:62:9-65:58
+	android:parentActivityName
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:65:13-55
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:64:13-37
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:63:13-57
+service#org.tensorflow.lite.examples.detection.MyForegroundService
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:67:9-72:43
+	android:enabled
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:69:13-35
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:70:13-36
+	android:stopWithTask
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:72:13-40
+	android:foregroundServiceType
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:71:13-51
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:68:13-48
+service#org.tensorflow.lite.examples.detection.display.DisplayService
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:73:9-75:63
+	android:foregroundServiceType
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:75:13-60
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:74:13-51
+activity#org.tensorflow.lite.examples.detection.SplashActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:77:9-86:20
+	android:screenOrientation
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:80:13-49
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:79:13-36
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:78:13-43
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:81:13-85:29
+action#android.intent.action.MAIN
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:82:17-69
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:82:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:84:17-77
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:84:27-74
+activity#org.tensorflow.lite.examples.detection.MyFlutterActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:87:9-89:40
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:89:13-37
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:88:13-46
+activity#org.tensorflow.lite.examples.detection.DetectorActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:90:9-93:58
+	android:parentActivityName
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:93:13-55
+	android:exported
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:92:13-36
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:91:13-45
+activity#io.flutter.embedding.android.FlutterActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:94:9-100:58
+	android:parentActivityName
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:98:13-55
+	android:hardwareAccelerated
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:97:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:100:13-55
+	android:configChanges
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:96:13-144
+	android:theme
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:99:13-47
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:95:13-72
+activity#org.tensorflow.lite.examples.detection.MainActivity
+ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:101:9-50
+	android:name
+		ADDED from /Users/antoinegallo/Documents/drone-detection-android-application/android/app/src/main/AndroidManifest.xml:101:19-47
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/db52e8f87a59c85ffdf54503accceaae/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/db52e8f87a59c85ffdf54503accceaae/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/antoinegallo/.gradle/caches/8.9/transforms/d1158be481cd0079aeff1d434d9e1f49/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/antoinegallo/.gradle/caches/8.9/transforms/d0fd860ae63bb4a94f2a296bc874af6e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78

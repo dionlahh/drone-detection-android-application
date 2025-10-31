@@ -240,8 +240,8 @@ public class ClientActivity extends AppCompatActivity
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()) {
-            case R.id.b_stream:
+        int id = v.getId();
+        if (id == R.id.b_stream) {
                 if (!rtspCamera1.isStreaming()) {
                     stream_button.setText(getResources().getString(R.string.stop_stream));
                     String user = etWowzaUser.getText().toString();
@@ -267,16 +267,13 @@ public class ClientActivity extends AppCompatActivity
                     rtspCamera1.stopStream();
 //                    tv_rtsp_link.setText("");
                 }
-                break;
-            default:
-                break;
         }
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        switch (v.getId()) {
-            case R.id.surfaceView:
+        int viewId = v.getId();
+        if (viewId == R.id.surfaceView) {
                 int action = event.getAction();
                 if (event.getPointerCount() > 1) {
                     if (action == MotionEvent.ACTION_MOVE) {
@@ -287,9 +284,8 @@ public class ClientActivity extends AppCompatActivity
 //                    rtspCamera2.tapToFocus(event);
 //                }
                 return true;
-            default:
-                return true;
         }
+        return true;
     }
 
     @Override

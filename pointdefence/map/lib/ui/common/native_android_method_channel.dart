@@ -58,14 +58,36 @@ class NativeAndroidMethodChannel {
     } catch (_) {}
   }
 
-  Future<void> getNativeBuild() async {
-    await Future.delayed(const Duration(milliseconds: 500));
+  /// Ouvre l'application Android native de détection de drones
+  /// Retourne un message décrivant le résultat
+  Future<String> getNativeBuild() async {
     try {
+      print('🔵 Appel de getNativeBuild');
+      
+      await Future.delayed(const Duration(milliseconds: 100));
+      
       final String response =
           await platformMethodChannel.invokeMethod('getNativeBuild');
-      await platformMethodChannel.invokeMethod(response);
-    } on MissingPluginException {
-      // Not available; ignore
-    } catch (_) {}
+      print('📱 Réponse getNativeBuild: $response');
+      
+      final String result = await platformMethodChannel.invokeMethod(response);
+      print('✅ Résultat openCameraActivity: $result');
+      
+      return result;
+      
+    } on PlatformException catch (e) {
+      print('❌ PlatformException: ${e.code} - ${e.message}');
+      
+      if (e.code == 'APP_NOT_FOUND') {
+        return 'APP_NOT_INSTALLED';
+      } else if (e.code == 'LAUNCH_ERROR') {
+        return 'ERROR';
+      }
+      
+      return 'ERROR';
+    } catch (e) {
+      print('❌ Exception générale: $e');
+      return 'ERROR';
+    }
   }
 }

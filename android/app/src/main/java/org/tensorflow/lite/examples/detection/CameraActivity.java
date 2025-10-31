@@ -1117,89 +1117,81 @@ public abstract class CameraActivity extends AppCompatActivity
   public void onClick(View v) {
     String threads;
     int numThreads;
-    switch(v.getId()) {
-      case R.id.plus: // Increase the number of running threads
-        threads = threadsTextView.getText().toString().trim();
-        numThreads = Integer.parseInt(threads);
-        if (numThreads >= 9) return;
-        numThreads++;
-        threadsTextView.setText(String.valueOf(numThreads));
-        setNumThreads(numThreads);
-        break;
-      case R.id.minus: // Decrease the number of running threads
-        threads = threadsTextView.getText().toString().trim();
-        numThreads = Integer.parseInt(threads);
-        if (numThreads == 1) {
-          return;
+    int id = v.getId();
+    if (id == R.id.plus) { // Increase the number of running threads
+      threads = threadsTextView.getText().toString().trim();
+      numThreads = Integer.parseInt(threads);
+      if (numThreads >= 9) return;
+      numThreads++;
+      threadsTextView.setText(String.valueOf(numThreads));
+      setNumThreads(numThreads);
+    } else if (id == R.id.minus) { // Decrease the number of running threads
+      threads = threadsTextView.getText().toString().trim();
+      numThreads = Integer.parseInt(threads);
+      if (numThreads == 1) {
+        return;
+      }
+      numThreads--;
+      threadsTextView.setText(String.valueOf(numThreads));
+      setNumThreads(numThreads);
+    } else if (id == R.id.b_start_stop) { // Start & Stop Capturing of Detection Results
+      if (!captureWorldOffsets) {
+        captureWorldOffsets = true;
+        initDataSize = worldOffsetResults.size();
+        button.setText("Stop Record");
+      } else {
+        captureWorldOffsets = false;
+        if (initDataSize == worldOffsetResults.size()) {
+          Toast.makeText(CameraActivity.this, "No new locations", Toast.LENGTH_SHORT).show();
+        } else if (initDataSize < worldOffsetResults.size()) {
+          Toast.makeText(CameraActivity.this, "Results updated", Toast.LENGTH_SHORT).show();
         }
-        numThreads--;
-        threadsTextView.setText(String.valueOf(numThreads));
-        setNumThreads(numThreads);
-        break;
-      case R.id.b_start_stop: // Start & Stop Capturing of Detection Results
-        if (!captureWorldOffsets) {
-          captureWorldOffsets = true;
-          initDataSize = worldOffsetResults.size();
-          button.setText("Stop Record");
+        button.setText("Record Data");
+      }
+    } else if (id == R.id.b_start_stop_mirror) { // RTSP Stream for Screen Mirror
+      DisplayService displayService = DisplayService.Companion.getINSTANCE();
+      if (displayService != null) {
+        if (!displayService.isStreaming()) {
+          button_mirror.setText("Stop Mirror");
+          startActivityForResult(displayService.sendIntent(), REQUEST_CODE_STREAM);
         } else {
-          captureWorldOffsets = false;
-          if (initDataSize == worldOffsetResults.size()) {
-            Toast.makeText(CameraActivity.this, "No new locations", Toast.LENGTH_SHORT).show();
-          } else if (initDataSize < worldOffsetResults.size()) {
-            Toast.makeText(CameraActivity.this, "Results updated", Toast.LENGTH_SHORT).show();
-          }
-          button.setText("Record Data");
+          button_mirror.setText("Start Mirror");
+          displayService.stopStream();
         }
-        break;
-      case R.id.b_start_stop_mirror: // RTSP Stream for Screen Mirror
-        DisplayService displayService = DisplayService.Companion.getINSTANCE();
-        if (displayService != null) {
-          if (!displayService.isStreaming()) {
-            button_mirror.setText("Stop Mirror");
-            startActivityForResult(displayService.sendIntent(), REQUEST_CODE_STREAM);
-          } else {
-            button_mirror.setText("Start Mirror");
-            displayService.stopStream();
-          }
-        }
-        break;
-      case R.id.b_calibrate: // Create a popup dialog window to save calibration data
-        if (isCalibrating) {
-          int[] boxDim = CameraConnectionFragment.calibrate();
-          CameraConnectionFragment.setDrawViewVisibility(isCalibrating);
-          boxWidth = boxDim[0];
-          boxHeight = boxDim[1];
-          LOGGER.d("Box Width: " + boxWidth +
-                  "\nBox Height: " + boxHeight);
-          Toast.makeText(CameraActivity.this, "Width: " + boxWidth + " Height: " + boxHeight, Toast.LENGTH_SHORT).show();
-          createCalibrationDialog();
-          boxWidth_calibration = boxWidth;
-          boxHeight_calibration = boxHeight;
-        } else {
-          Toast.makeText(CameraActivity.this, "Turn on calibration mode first!", Toast.LENGTH_SHORT).show();
-        }
-        break;
-      default:
-        break;
+      }
+    } else if (id == R.id.b_calibrate) { // Create a popup dialog window to save calibration data
+      if (isCalibrating) {
+        int[] boxDim = CameraConnectionFragment.calibrate();
+        CameraConnectionFragment.setDrawViewVisibility(isCalibrating);
+        boxWidth = boxDim[0];
+        boxHeight = boxDim[1];
+        LOGGER.d("Box Width: " + boxWidth +
+                "\nBox Height: " + boxHeight);
+        Toast.makeText(CameraActivity.this, "Width: " + boxWidth + " Height: " + boxHeight, Toast.LENGTH_SHORT).show();
+        createCalibrationDialog();
+        boxWidth_calibration = boxWidth;
+        boxHeight_calibration = boxHeight;
+      } else {
+        Toast.makeText(CameraActivity.this, "Turn on calibration mode first!", Toast.LENGTH_SHORT).show();
+      }
     }
   }
 
   @Override
   public boolean onLongClick(View view){
-    switch (view.getId()) {
-      case R.id.b_start_stop: // Cleared all the saved detection instances
-        worldOffsetResults.clear();
-        Toast.makeText(CameraActivity.this, "Results cleared", Toast.LENGTH_SHORT).show();
-        return true;
-      default:
-        return true;
+    int id = view.getId();
+    if (id == R.id.b_start_stop) { // Cleared all the saved detection instances
+      worldOffsetResults.clear();
+      Toast.makeText(CameraActivity.this, "Results cleared", Toast.LENGTH_SHORT).show();
+      return true;
     }
+    return true;
   }
 
   @Override
   public boolean onTouch(View view, MotionEvent event){
-    switch (view.getId()) {
-      case R.id.iv_redline:
+    int id = view.getId();
+    if (id == R.id.iv_redline) {
         final int X = (int) event.getRawX();
         final int Y = (int) event.getRawY();
         // For debugging purposes to check if the imageView has crossed the boundaries
@@ -1277,53 +1269,47 @@ public abstract class CameraActivity extends AppCompatActivity
             break;
         }
         return true;
-      default:
-        return true;
-
     }
+    return true;
   }
 
   @Override
   public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-    switch(compoundButton.getId()) {
-      case R.id.switchDetector: // Detection On/Off Switch
-        startDetector = b;
-        if (startDetector) {
-          liveTextView.setVisibility(View.VISIBLE);
-          detectorSwitch.setText("Detector : On");
-          LOGGER.i("startDetector is True");
-        } else {
-          liveTextView.setVisibility(View.INVISIBLE);
-          detectorSwitch.setText("Detector : Off");
-          LOGGER.i("startDetector is False");
-        }
-        break;
-      case R.id.switchRedLine: // Redline Switch
-        setCutOff = b;
-        if (setCutOff) {
-          cutOffY = lastCutOffY;
-          mImageView.setAlpha(255);
-          redLineSwitch.setText("Cutoff Area : On");
-          LOGGER.i("Red line is on screen");
-        } else {
-          lastCutOffY = cutOffY;
-          cutOffY = 2000;
-          mImageView.setAlpha(0);
-          redLineSwitch.setText("Cutoff Area : Off");
-          LOGGER.i("Red line is removed");
-        }
-      case R.id.switchCalibration: // Calibration Mode Switch
-        isCalibrating = b;
-        if (isCalibrating) {
-          CameraConnectionFragment.setDrawViewVisibility(isCalibrating);
-          calibrationSwitch.setText("Calibration Mode : On");
-        } else {
-          CameraConnectionFragment.setDrawViewVisibility(isCalibrating);
-          calibrationSwitch.setText("Calibration Mode : Off");
-        }
-        break;
-      default:
-        break;
+    int id = compoundButton.getId();
+    if (id == R.id.switchDetector) { // Detection On/Off Switch
+      startDetector = b;
+      if (startDetector) {
+        liveTextView.setVisibility(View.VISIBLE);
+        detectorSwitch.setText("Detector : On");
+        LOGGER.i("startDetector is True");
+      } else {
+        liveTextView.setVisibility(View.INVISIBLE);
+        detectorSwitch.setText("Detector : Off");
+        LOGGER.i("startDetector is False");
+      }
+    } else if (id == R.id.switchRedLine) { // Redline Switch
+      setCutOff = b;
+      if (setCutOff) {
+        cutOffY = lastCutOffY;
+        mImageView.setAlpha(255);
+        redLineSwitch.setText("Cutoff Area : On");
+        LOGGER.i("Red line is on screen");
+      } else {
+        lastCutOffY = cutOffY;
+        cutOffY = 2000;
+        mImageView.setAlpha(0);
+        redLineSwitch.setText("Cutoff Area : Off");
+        LOGGER.i("Red line is removed");
+      }
+    } else if (id == R.id.switchCalibration) { // Calibration Mode Switch
+      isCalibrating = b;
+      if (isCalibrating) {
+        CameraConnectionFragment.setDrawViewVisibility(isCalibrating);
+        calibrationSwitch.setText("Calibration Mode : On");
+      } else {
+        CameraConnectionFragment.setDrawViewVisibility(isCalibrating);
+        calibrationSwitch.setText("Calibration Mode : Off");
+      }
     }
   }
 

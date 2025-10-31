@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="control_background">#cc4285f4</color>
+    <color name="flutter_color">#FF2196F3</color>
+    <color name="item_normal">#eeeeee</color>
+    <color name="selection_focus">#eeaa55</color>
+    <color name="selection_highlight">#aaaaaa</color>
+    <color name="tfe_color_accent">#425066</color>
+    <color name="tfe_color_primary">#ffa800</color>
+    <color name="tfe_color_primary_dark">#ff6f00</color>
+    <color name="tfe_semi_transparent">#66000000</color>
+    <dimen name="tfe_bottom_sheet_corner_radius">15dp</dimen>
+    <dimen name="tfe_bottom_sheet_top_padding">8dp</dimen>
+    <string name="audio">Audio</string>
+    <string name="audio_bitrate">Bitrate</string>
+    <string name="audio_source">Audio source</string>
+    <string name="auth">Auth</string>
+    <string name="camera">Camera</string>
+    <string name="camera1">Camera1</string>
+    <string name="camera2">Camera2</string>
+    <string name="channel">Channel</string>
+    <string name="client_app_name">RTSP Streamer</string>
+    <string name="drawer_title">Options</string>
+    <string name="echo_canceler">Echo canceler</string>
+    <string name="fps">FPS</string>
+    <string name="hardware_rotation">Hardware rotation</string>
+    <string name="internal">Internal</string>
+    <string name="mono">Mono</string>
+    <string name="noise_suppressor">Noise suppressor</string>
+    <string name="orientation">Orientation</string>
+    <string name="password">Password</string>
+    <string name="protocols">Protocol</string>
+    <string name="resolution">Resolution</string>
+    <string name="samplerate">SampleRate</string>
+    <string name="screen">Screen</string>
+    <string name="sotw_east">E</string>
+    <string name="sotw_north">N</string>
+    <string name="sotw_northeast">NE</string>
+    <string name="sotw_northwest">NW</string>
+    <string name="sotw_south">S</string>
+    <string name="sotw_southeast">SE</string>
+    <string name="sotw_southwest">SW</string>
+    <string name="sotw_west">W</string>
+    <string name="start_stream">Start Stream</string>
+    <string name="stereo">Stereo</string>
+    <string name="stop_stream">Stop Stream</string>
+    <string name="tcp">TCP</string>
+    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">TFL Detect</string>
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
+    <string name="udp">UDP</string>
+    <string name="user">User</string>
+    <string name="video">Video</string>
+    <string name="video_bitrate">Bitrate (on fly)</string>
+    <string name="video_source">Video source</string>
+    <style name="AppTheme.ObjectDetection" parent="Theme.AppCompat.Light">
+        
+        <item name="colorPrimary">@color/tfe_color_primary</item>
+        <item name="colorPrimaryDark">@color/tfe_color_primary_dark</item>
+        <item name="colorAccent">@color/tfe_color_accent</item>
+
+    </style>
+    <style name="FlutterTheme" parent="Theme.AppCompat.Light">
+        
+        <item name="colorPrimary">@color/flutter_color</item>
+        <item name="colorPrimaryDark">@color/control_background</item>
+        <item name="colorAccent">@color/tfe_color_accent</item>
+        <item name="android:colorForeground">@android:color/white</item>
+    </style>
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">@drawable/ic_drone_icon</item>
+    </style>
+</resources>

@@ -95,24 +95,21 @@ public class ImageDetectionActivity extends AppCompatActivity
 
     @Override
     public void onClick(View view) {
-        switch(view.getId()){
-            case R.id.run_button:
-                Handler handler = new Handler();
+        int id = view.getId();
+        if (id == R.id.run_button) {
+            Handler handler = new Handler();
 
-                new Thread(()->{
-                   final List<Classifier.Recognition> results = detector.recognizeImage(cropBitmap);
-                   handler.post(new Runnable() {
-                       @Override
-                       public void run() {
-                           handleResult(cropBitmap, results);
-                       }
-                   });
-                }).start();
-                break;
-            case R.id.upload_button:
-                break;
-            default:
-                break;
+            new Thread(()->{
+               final List<Classifier.Recognition> results = detector.recognizeImage(cropBitmap);
+               handler.post(new Runnable() {
+                   @Override
+                   public void run() {
+                       handleResult(cropBitmap, results);
+                   }
+               });
+            }).start();
+        } else if (id == R.id.upload_button) {
+            // Upload button action
         }
     }
 

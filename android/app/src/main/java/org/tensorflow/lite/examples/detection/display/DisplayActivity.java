@@ -163,8 +163,8 @@ public class DisplayActivity extends AppCompatActivity
     public void onClick(View view) {
         DisplayService displayService = DisplayService.Companion.getINSTANCE();
         if (displayService != null) {
-            switch (view.getId()) {
-                case R.id.b_start_stop:
+            int id = view.getId();
+            if (id == R.id.b_start_stop) {
                     if (!displayService.isStreaming()) {
                         button.setText("Stop Stream");
                         startActivityForResult(displayService.sendIntent(), REQUEST_CODE_STREAM);
@@ -172,9 +172,6 @@ public class DisplayActivity extends AppCompatActivity
                         button.setText("Start Stream");
                         displayService.stopStream();
                     }
-                    break;
-                default:
-                    break;
             }
         }
     }

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.tensorflow.lite.examples.detection"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="23"
+        android:targetSdkVersion="34" />
+    <!-- Tell the system this app requires OpenGL ES 3.1. -->
+    <uses-feature
+        android:glEsVersion="0x00030001"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="false"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:extractNativeLibs="false"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_drone_icon"
+        android:installLocation="internalOnly"
+        android:label="Point Defence"
+        android:roundIcon="@drawable/ic_drone_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.ObjectDetection" >
+        <activity
+            android:name="org.tensorflow.lite.examples.detection.trial.CalibrateActivity"
+            android:exported="false" />
+        <activity
+            android:name="org.tensorflow.lite.examples.detection.display.ClientActivity"
+            android:exported="false" />
+
+        <service
+            android:name="org.tensorflow.lite.examples.detection.CameraService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name="org.tensorflow.lite.examples.detection.trial.SpatialActivity"
+            android:exported="false"
+            android:parentActivityName="org.tensorflow.lite.examples.detection.MainActivity" />
+        <activity
+            android:name="org.tensorflow.lite.examples.detection.display.DisplayActivity"
+            android:exported="false" />
+        <activity
+            android:name="org.tensorflow.lite.examples.detection.trial.RTSPActivity"
+            android:exported="false"
+            android:parentActivityName="org.tensorflow.lite.examples.detection.MainActivity" />
+        <activity
+            android:name="org.tensorflow.lite.examples.detection.trial.SensorActivity"
+            android:exported="false" />
+        <activity
+            android:name="org.tensorflow.lite.examples.detection.trial.DragAndDropActivity"
+            android:exported="false" />
+        <activity
+            android:name="org.tensorflow.lite.examples.detection.trial.ImageDetectionActivity"
+            android:exported="false"
+            android:parentActivityName="org.tensorflow.lite.examples.detection.MainActivity" />
+
+        <service
+            android:name="org.tensorflow.lite.examples.detection.MyForegroundService"
+            android:enabled="true"
+            android:exported="true"
+            android:foregroundServiceType="camera"
+            android:stopWithTask="true" />
+        <service
+            android:name="org.tensorflow.lite.examples.detection.display.DisplayService"
+            android:foregroundServiceType="mediaProjection" />
+
+        <activity
+            android:name="org.tensorflow.lite.examples.detection.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.tensorflow.lite.examples.detection.MyFlutterActivity"
+            android:exported="false" />
+        <activity
+            android:name="org.tensorflow.lite.examples.detection.DetectorActivity"
+            android:exported="true"
+            android:parentActivityName="org.tensorflow.lite.examples.detection.MainActivity" />
+        <activity
+            android:name="io.flutter.embedding.android.FlutterActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:parentActivityName="org.tensorflow.lite.examples.detection.MainActivity"
+            android:theme="@style/LaunchTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name="org.tensorflow.lite.examples.detection.MainActivity" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="org.tensorflow.lite.examples.detection.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>

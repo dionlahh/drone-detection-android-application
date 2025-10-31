@@ -261,10 +261,51 @@ class MapPageState extends State<MapPage> {
                       },
                       icon: const Icon(Icons.layers)),
                   IconButton(
-                      tooltip: 'Prendre une photo',
-                      onPressed: () {
-                        debugPrint('Camera button pressed');
-                        _takePicture();
+                      tooltip: 'Ouvrir la détection de drones',
+                      onPressed: () async {
+                        debugPrint('🎯 Bouton caméra cliqué');
+                        
+                        final result = await NativeAndroidMethodChannel().getNativeBuild();
+                        
+                        if (!mounted) return;
+                        
+                        if (result == 'APP_NOT_INSTALLED') {
+                          // L'application de détection n'est pas installée
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              title: const Text('Application non installée'),
+                              content: const Text(
+                                'L\'application de détection de drones n\'est pas installée sur cet appareil.\n\n'
+                                'Veuillez installer l\'application "Point Defence" depuis le projet Android natif.'
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () => Navigator.pop(context),
+                                  child: const Text('OK'),
+                                ),
+                              ],
+                            ),
+                          );
+                        } else if (result == 'ERROR') {
+                          // Erreur lors du lancement
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Erreur lors de l\'ouverture de la caméra'),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                        } else if (result == 'APP_LAUNCHED') {
+                          // Succès - l'app native s'est ouverte
+                          debugPrint('✅ Application de détection lancée avec succès');
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Application de détection lancée'),
+                              backgroundColor: Colors.green,
+                              duration: Duration(seconds: 2),
+                            ),
+                          );
+                        }
                       },
                       icon: const Icon(Icons.camera)),
                   IconButton(

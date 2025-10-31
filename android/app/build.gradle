@@ -1,33 +1,39 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("dev.flutter.flutter-gradle-plugin")
+    // Temporairement désactivé car non nécessaire pour l'app native seule
+    // id("dev.flutter.flutter-gradle-plugin")
 }
 
 android {
     namespace = "org.tensorflow.lite.examples.detection"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "org.tensorflow.lite.examples.detection"
-        minSdk = 21
-        targetSdk = 33
+        minSdk = 23
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
         ndk {
-            abiFilters = listOf("armeabi-v7a", "arm64-v8a", "x86")
+            abiFilters += ["armeabi-v7a", "arm64-v8a", "x86"]
         }
     }
 
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = false
+            minifyEnabled = false
+            shrinkResources = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+        }
+        getByName("debug") {
+            minifyEnabled = false
+            shrinkResources = false
         }
     }
 
     aaptOptions {
-        noCompress = listOf("tflite")
+        noCompress = ["tflite"]
     }
 
     compileOptions {
@@ -35,7 +41,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
-    kotlin {
+    kotlinOptions {
         jvmTarget = "11"
     }
 }
@@ -43,5 +49,22 @@ android {
 dependencies {
     implementation("androidx.appcompat:appcompat:1.4.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    // autres dépendances
+    implementation("com.google.android.material:material:1.8.0")
+    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
+    
+    // RTSP library for OpenGlView
+    implementation("com.github.pedroSG94.rtmp-rtsp-stream-client-java:rtplibrary:2.1.7")
+    
+    // TensorFlow Lite
+    implementation("org.tensorflow:tensorflow-lite:2.8.0")
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.8.0")
+    implementation("org.tensorflow:tensorflow-lite-support:0.3.1")
+    
+    // Gson for JSON parsing
+    implementation("com.google.code.gson:gson:2.10.1")
 }
+
+// Temporairement désactivé car non nécessaire pour l'app native seule
+// flutter {
+//     source = "../../pointdefence/map"
+// }

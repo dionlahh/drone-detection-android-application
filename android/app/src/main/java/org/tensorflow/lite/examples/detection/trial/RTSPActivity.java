@@ -130,39 +130,37 @@ public class RTSPActivity extends AppCompatActivity
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.b_start_stop:
-                if (!rtspCamera1.isStreaming()) {
-                    if (rtspCamera1.isRecording()
-                            || rtspCamera1.prepareAudio() && rtspCamera1.prepareVideo()) {
-                        button.setText("Stop Stream");
-                        rtspCamera1.startStream(etUrl.getText().toString());
-                    } else {
-                        if (rtspCamera1.isRecording())
-                            LOGGER.d("rtspCamera1 is recording/n");
-                        else LOGGER.d("rtspCamera1 is not recording/n");
-                        if (rtspCamera1.prepareAudio())
-                            LOGGER.d("rtspCamera1 preparing audio/n");
-                        else LOGGER.d("rtspCamera1 not preparing audio/n");
-                        if (rtspCamera1.prepareVideo())
-                            LOGGER.d("rtspCamera1 preparing video/n");
-                        else LOGGER.d("rtspCamera1 not preparing video/n");
-                        Toast.makeText(this, "Error preparing stream, This device cant do it",
-                                Toast.LENGTH_SHORT).show();
-                    }
+        int id = view.getId();
+        if (id == R.id.b_start_stop) {
+            if (!rtspCamera1.isStreaming()) {
+                if (rtspCamera1.isRecording()
+                        || rtspCamera1.prepareAudio() && rtspCamera1.prepareVideo()) {
+                    button.setText("Stop Stream");
+                    rtspCamera1.startStream(etUrl.getText().toString());
                 } else {
-                    button.setText("Start Stream");
-                    rtspCamera1.stopStream();
+                    if (rtspCamera1.isRecording())
+                        LOGGER.d("rtspCamera1 is recording/n");
+                    else LOGGER.d("rtspCamera1 is not recording/n");
+                    if (rtspCamera1.prepareAudio())
+                        LOGGER.d("rtspCamera1 preparing audio/n");
+                    else LOGGER.d("rtspCamera1 not preparing audio/n");
+                    if (rtspCamera1.prepareVideo())
+                        LOGGER.d("rtspCamera1 preparing video/n");
+                    else LOGGER.d("rtspCamera1 not preparing video/n");
+                    Toast.makeText(this, "Error preparing stream, This device cant do it",
+                            Toast.LENGTH_SHORT).show();
                 }
-                break;
-            case R.id.switch_camera:
-                try {
-                    rtspCamera1.switchCamera();
-                } catch (CameraOpenException e) {
-                    Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.b_record:
+            } else {
+                button.setText("Start Stream");
+                rtspCamera1.stopStream();
+            }
+        } else if (id == R.id.switch_camera) {
+            try {
+                rtspCamera1.switchCamera();
+            } catch (CameraOpenException e) {
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        } else if (id == R.id.b_record) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                     if (!rtspCamera1.isRecording()) {
                         try {
@@ -205,9 +203,6 @@ public class RTSPActivity extends AppCompatActivity
                     Toast.makeText(this, "You need min JELLY_BEAN_MR2(API 18) for do it...",
                             Toast.LENGTH_SHORT).show();
                 }
-                break;
-            default:
-                break;
         }
     }
 

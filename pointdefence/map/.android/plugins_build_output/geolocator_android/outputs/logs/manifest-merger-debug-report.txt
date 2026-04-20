@@ -1,0 +1,29 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:1:1-11:12
+	package
+		ADDED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:2:3-36
+		INJECTED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:4:5-10:19
+service#com.baseflow.geolocator.GeolocatorLocationService
+ADDED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:5:9-9:60
+	android:enabled
+		ADDED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:6:17-39
+	android:exported
+		ADDED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:7:17-41
+	android:foregroundServiceType
+		ADDED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:8:17-57
+	android:name
+		ADDED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml:9:17-58
+uses-sdk
+INJECTED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml
+INJECTED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/antoinegallo/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2/android/src/main/AndroidManifest.xml

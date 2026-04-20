@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".display.ClientActivity"
+    tools:openDrawer="start"
+    android:id="@+id/activity_client">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <SurfaceView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/surfaceView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_bitrate"
+            android:layout_margin="20dp"
+            android:layout_alignTop="@id/et_rtsp_link"
+            android:layout_alignEnd="@id/et_rtsp_link"/>
+
+        <EditText
+            android:textSize="20dp"
+            android:textColor="@color/tfe_color_primary"
+            android:textColorHint="@color/tfe_color_primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="20dp"
+            android:id="@+id/et_rtsp_link"/>
+
+        <Button
+            android:text="Start Stream"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/tfe_color_primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b_stream"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"/>
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:paddingBottom="30dp"
+        android:fitsSystemWindows="true"
+        android:id="@+id/nv_rtsp_options"
+        >
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

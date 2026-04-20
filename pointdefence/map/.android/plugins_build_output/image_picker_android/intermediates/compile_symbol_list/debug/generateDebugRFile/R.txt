@@ -1,0 +1,1 @@
+int xml flutter_image_picker_file_paths 0x0

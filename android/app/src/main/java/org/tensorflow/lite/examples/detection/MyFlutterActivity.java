@@ -28,7 +28,7 @@ import io.flutter.embedding.engine.dart.DartExecutor;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodCall;
 
-import io.flutter.plugins.GeneratedPluginRegistrant;
+// GeneratedPluginRegistrant is no longer needed in modern Flutter
 
 public class MyFlutterActivity extends FlutterActivity {
 
@@ -46,8 +46,8 @@ public class MyFlutterActivity extends FlutterActivity {
 
     @Override
     public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
-        GeneratedPluginRegistrant.registerWith(flutterEngine);
-
+        // GeneratedPluginRegistrant.registerWith is no longer needed in modern Flutter
+        
         new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL).setMethodCallHandler(((methodCall, result) -> {
             if (methodCall.method.equals("increment")) {
 //                SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss:SSS z");

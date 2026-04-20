@@ -4,6 +4,8 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
    <application
         android:label="pointdefence"
         android:name="${applicationName}"
@@ -35,4 +37,9 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    
+    <!-- Android 11+ : Déclarer les packages externes qu'on veut lancer -->
+    <queries>
+        <package android:name="org.tensorflow.lite.examples.detection" />
+    </queries>
 </manifest>

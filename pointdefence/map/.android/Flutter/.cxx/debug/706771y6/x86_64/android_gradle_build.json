@@ -1,0 +1,28 @@
+{
+  "buildFiles": [
+    "/Users/antoinegallo/Documents/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/antoinegallo/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/antoinegallo/Documents/drone-detection-android-application/pointdefence/map/.android/Flutter/.cxx/debug/706771y6/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/antoinegallo/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/antoinegallo/Documents/drone-detection-android-application/pointdefence/map/.android/Flutter/.cxx/debug/706771y6/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {},
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/antoinegallo/Library/Android/sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/antoinegallo/Library/Android/sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": []
+}

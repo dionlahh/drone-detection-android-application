@@ -23,36 +23,62 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         getSupportActionBar().hide();
 
-        while (true) {
-            if (!MainActivity.hasPermissions(this, MainActivity.PERMISSIONS)) {
-                ActivityCompat.requestPermissions(this, MainActivity.PERMISSIONS, 1);
-            } else {
+        // Vérifier et demander les permissions de manière asynchrone
+        if (!MainActivity.hasPermissions(this, MainActivity.PERMISSIONS)) {
+            ActivityCompat.requestPermissions(this, MainActivity.PERMISSIONS, 1);
+            // Attendre que les permissions soient accordées avant de continuer
+            // Les permissions seront gérées dans onRequestPermissionsResult
+            return;
+        }
+
+        // Si les permissions sont déjà accordées, lancer DetectorActivity
+        launchDetectorActivity();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        
+        // Vérifier si toutes les permissions sont accordées
+        boolean allPermissionsGranted = true;
+        for (int result : grantResults) {
+            if (result != android.content.pm.PackageManager.PERMISSION_GRANTED) {
+                allPermissionsGranted = false;
                 break;
             }
         }
+        
+        if (allPermissionsGranted) {
+            // Les permissions sont accordées, lancer DetectorActivity
+            launchDetectorActivity();
+        } else {
+            // Les permissions sont refusées, fermer l'app ou afficher un message
+            android.util.Log.e("SplashActivity", "Permissions denied. Cannot launch DetectorActivity.");
+            finish();
+        }
+    }
 
+    private void launchDetectorActivity() {
         new Handler().postDelayed(
                 () -> {
-                    if (AppConfiguration.debugMode) {
-                        startActivity(new Intent(this, MainActivity.class));
-                    } else {
-                        FlutterEngine flutterEngine = new FlutterEngine(SplashActivity.this);
-                        flutterEngine.getNavigationChannel().setInitialRoute("/second");
-
-                        flutterEngine.getDartExecutor().executeDartEntrypoint(
-                                DartExecutor.DartEntrypoint.createDefault()
-                        );
-//
-                        FlutterEngineCache.getInstance().put("myEngine", flutterEngine);
-                        startActivity(
-                                FlutterActivity
-                                        .withCachedEngine("myEngine")
-                                        .build(SplashActivity.this)
-                                        .setClass(SplashActivity.this, MyFlutterActivity.class)
-                        );
-                    }
+                    try {
+                        // Lancer directement DetectorActivity (la caméra)
+                        Intent intent = new Intent(this, DetectorActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
                         finish();
-                }, 0
+                    } catch (Exception e) {
+                        android.util.Log.e("SplashActivity", "Error launching DetectorActivity", e);
+                        // En cas d'erreur, retourner au menu principal
+                        try {
+                            startActivity(new Intent(this, MainActivity.class));
+                            finish();
+                        } catch (Exception e2) {
+                            android.util.Log.e("SplashActivity", "Error launching MainActivity", e2);
+                            finish();
+                        }
+                    }
+                }, 500 // Petit délai pour s'assurer que l'UI est prête
         );
     }
 }

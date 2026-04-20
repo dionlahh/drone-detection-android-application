@@ -1,0 +1,54 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="io.flutter.plugins.imagepicker" >
+5
+6    <uses-sdk android:minSdkVersion="24" />
+7
+8    <application>
+8-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:5:5-25:19
+9        <provider
+9-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:6:9-14:20
+10            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+10-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:7:13-82
+11            android:authorities="${applicationId}.flutter.image_provider"
+11-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:8:13-74
+12            android:exported="false"
+12-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:9:13-37
+13            android:grantUriPermissions="true" >
+13-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:10:13-47
+14            <meta-data
+14-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:11:13-13:75
+15                android:name="android.support.FILE_PROVIDER_PATHS"
+15-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:12:17-67
+16                android:resource="@xml/flutter_image_picker_file_paths" />
+16-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:13:17-72
+17        </provider>
+18        <!-- Trigger Google Play services to install the backported photo picker module. -->
+19        <service
+19-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:16:9-24:19
+20            android:name="com.google.android.gms.metadata.ModuleDependencies"
+20-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:16:18-83
+21            android:enabled="false"
+21-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:17:17-40
+22            android:exported="false"
+22-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:18:17-41
+23            tools:ignore="MissingClass" >
+23-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:19:17-44
+24            <intent-filter>
+24-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:20:13-22:29
+25                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+25-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:21:17-94
+25-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:21:25-91
+26            </intent-filter>
+27
+28            <meta-data
+28-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:23:13-90
+29                android:name="photopicker_activity:0:required"
+29-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:23:24-70
+30                android:value="" />
+30-->/Users/antoinegallo/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+7/android/src/main/AndroidManifest.xml:23:71-87
+31        </service>
+32    </application>
+33
+34</manifest>

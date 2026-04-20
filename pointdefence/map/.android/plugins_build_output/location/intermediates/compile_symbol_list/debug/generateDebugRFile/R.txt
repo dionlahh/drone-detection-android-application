@@ -1,0 +1,1 @@
+int drawable navigation_empty_icon 0x0

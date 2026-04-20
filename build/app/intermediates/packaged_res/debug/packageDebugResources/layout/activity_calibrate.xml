@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".trial.CalibrateActivity">
+
+    <org.tensorflow.lite.examples.detection.position.DrawView
+        android:id="@+id/draw_view_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/phantom_top_down_10m" />
+
+    <Button
+        android:id="@+id/calibrate_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Calibrate"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
